@@ -5,10 +5,26 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "bank_name",
-  "login_date",
+  "sourcing_details_section",
+  "file_type",
   "column_break_pmtx",
-  "sourced_by"
+  "sourced_by",
+  "column_break_rqwf",
+  "login_date",
+  "column_break_vrek",
+  "bank_name",
+  "customer_details_section",
+  "customer_name",
+  "pin_code",
+  "column_break_ilvu",
+  "mobile_no",
+  "email",
+  "column_break_ilob",
+  "pan_no",
+  "ipa_status",
+  "column_break_kqvx",
+  "city",
+  "source"
  ],
  "fields": [
   {
@@ -21,6 +37,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "HDFC- Credlawn",
    "fieldname": "bank_name",
    "fieldtype": "Select",
    "label": "Bank Name",
@@ -28,14 +45,94 @@
   },
   {
    "fieldname": "sourced_by",
-   "fieldtype": "Link",
+   "fieldtype": "Dynamic Link",
    "label": "Sourced By",
-   "options": "Employee"
+   "options": "source"
+  },
+  {
+   "default": "Team",
+   "fieldname": "file_type",
+   "fieldtype": "Select",
+   "label": "File Type",
+   "options": "\nTeam\nVendor\nCampaign"
+  },
+  {
+   "fieldname": "sourcing_details_section",
+   "fieldtype": "Section Break",
+   "label": "Sourcing Details"
+  },
+  {
+   "fieldname": "column_break_rqwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vrek",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_ilvu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "column_break_ilob",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pan_no",
+   "fieldtype": "Data",
+   "label": "Pan No"
+  },
+  {
+   "fieldname": "column_break_kqvx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "pin_code",
+   "fieldtype": "Data",
+   "label": "Pin Code"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "ipa_status",
+   "fieldtype": "Select",
+   "label": "IP Status",
+   "options": "Pending\nApproved\nDecline"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "label": "Source",
+   "options": "DocType"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-25 16:25:49.704758",
+ "modified": "2024-10-26 14:37:27.927943",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Cards",

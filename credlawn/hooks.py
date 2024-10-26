@@ -31,7 +31,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 app_include_css = [
-    "/assets/credlawn/css/credlawn.css"
+    "/assets/credlawn/css/credlawn.css" 
 ]
 
 # app_include_js = "/assets/credlawn/js/credlawn.js"
@@ -157,18 +157,24 @@ app_include_css = [
 # ---------------
 
 scheduler_events = {
-
     "cron": {
         "* * * * *": [
-            "credlawn.scripts.send_new_lead.send_lead"
+            "credlawn.scripts.send_new_lead.send_lead",
+        ],
+        "0 0 * * *": [  # This runs every day at midnight
+            "credlawn.scripts.update_employee_age_n_tenure.scheduled_employee_update"
+        ],
+        "0 * * * *": [  # This runs every hour
+            "credlawn.scripts.get_new_leads_from_url_shortener.fetch_and_process_urls",
+            "credlawn.scripts.update_clicks_from_url.fetch_visitor_record"
         ],
         "*/5 * * * *": [  # This runs every 5 minutes
-            "credlawn.scripts.get_new_leads_from_url_shortener.fetch_and_process_urls",
-            "credlawn.scripts.create_short_url.run_post_request",
-            "credlawn.scripts.update_clicks_from_url.fetch_visitor_record"
+            "credlawn.scripts.create_short_url.run_post_request"
         ]
     }
 }
+
+
 
 
 

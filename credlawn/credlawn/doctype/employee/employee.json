@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:employee_code",
  "creation": "2024-10-25 15:11:02.085255",
@@ -32,11 +33,11 @@
   "column_break_yuot",
   "age",
   "exit_details_section",
-  "last_working_date",
-  "column_break_pigr",
   "reason_for_leaving",
+  "column_break_pigr",
+  "last_working_date",
   "column_break_sehj",
-  "ageing",
+  "tenure",
   "column_break_wkeh"
  ],
  "fields": [
@@ -82,6 +83,8 @@
   {
    "fieldname": "branch",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Branch",
    "options": "\nCard\nOD\nMarket\nAll"
   },
@@ -95,7 +98,7 @@
    "fieldname": "designation",
    "fieldtype": "Select",
    "label": "Designation",
-   "options": "\nRelationship Executive\nSr Relationship Executive\nOperation Executive\nHR Executive\nSr HR Executive\nRelationship Manager\nBranch Manager\nBusiness Head\nCEO"
+   "options": "\nOffice Assistant\nRelationship Executive\nSr Relationship Executive\nOperation Executive\nSr Operation Executive\nHR Executive\nSr HR Executive\nRelationship Manager\nBranch Manager\nBusiness Head\nCEO"
   },
   {
    "fieldname": "grade",
@@ -134,6 +137,7 @@
   {
    "fieldname": "age",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Age",
    "read_only": 1
   },
@@ -161,8 +165,10 @@
   {
    "fieldname": "employment_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Employment Status",
-   "options": "\nActive\nResigned\nAbscond\nAbsconded"
+   "options": "\nActive\nResigned\nAbscond"
   },
   {
    "fieldname": "exit_details_section",
@@ -188,20 +194,19 @@
   },
   {
    "fieldname": "reason_for_leaving",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Reason For Leaving"
   },
   {
-   "fieldname": "ageing",
+   "fieldname": "tenure",
    "fieldtype": "Data",
-   "label": "Ageing",
-   "read_only": 1
+   "label": "Tenure"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-26 10:29:01.695429",
+ "modified": "2024-10-26 12:02:07.135489",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Employee",
@@ -222,7 +227,7 @@
   }
  ],
  "show_title_field_in_link": 1,
- "sort_field": "modified",
+ "sort_field": "employee_code",
  "sort_order": "DESC",
  "states": [],
  "title_field": "employee_name"

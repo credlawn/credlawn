@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:lc2_code",
+ "creation": "2024-10-09 15:34:56.629985",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "campaign_date",
+  "column_break_tmqt",
+  "number_status",
+  "column_break_folm",
+  "customer_type",
+  "column_break_uebv",
+  "city",
+  "column_break_esfa",
+  "old_url",
+  "section_break_dxyu",
+  "customer_name",
+  "lc2_code",
+  "column_break_kfyn",
+  "mobile_no",
+  "column_break_sxvy",
+  "lc1_code",
+  "column_break_pwgq",
+  "link_type",
+  "column_break_jmhx",
+  "data_source",
+  "section_break_gjwj",
+  "metatitle",
+  "short_url",
+  "bank_link",
+  "url_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kfyn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mobile No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_sxvy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lc1_code",
+   "fieldtype": "Select",
+   "label": "LC-1 Code",
+   "options": "CIPL01",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lc2_code",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "LC-2 Code",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_gjwj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bank_link",
+   "fieldtype": "Small Text",
+   "label": "Bank Link",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pwgq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Link Type",
+   "options": "\nNormal\nTata\nSwiggy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jmhx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_source",
+   "fieldtype": "Select",
+   "label": "Data Source",
+   "options": "\nBOB\nPNB\nNaukri\nMetlife\nVendor\nInnov",
+   "reqd": 1
+  },
+  {
+   "fieldname": "campaign_date",
+   "fieldtype": "Date",
+   "label": "Campaign Date"
+  },
+  {
+   "fieldname": "column_break_tmqt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "New",
+   "fieldname": "number_status",
+   "fieldtype": "Select",
+   "label": "Number Status",
+   "options": "New\nUsed"
+  },
+  {
+   "fieldname": "section_break_dxyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_folm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uebv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_esfa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "old_url",
+   "fieldtype": "Data",
+   "label": "Old Url",
+   "read_only": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "read_only": 1
+  },
+  {
+   "default": "Unknown",
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "Unknown\nETB\nNTB",
+   "read_only": 1
+  },
+  {
+   "fieldname": "metatitle",
+   "fieldtype": "Data",
+   "label": "Meta Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "short_url",
+   "fieldtype": "Data",
+   "label": "Short Url",
+   "read_only": 1
+  },
+  {
+   "fieldname": "url_status",
+   "fieldtype": "Select",
+   "label": "Url Status",
+   "options": "\nPending\nApproved\nTest"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-11 22:23:04.299650",
+ "modified_by": "Administrator",
+ "module": "Credlawn",
+ "name": "Login Link",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name"
+}

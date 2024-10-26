@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:link",
+ "creation": "2024-10-05 17:22:59.081684",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Other",
+ "engine": "InnoDB",
+ "field_order": [
+  "campaign_details_section",
+  "campaign_date",
+  "column_break_hlma",
+  "cr_date",
+  "column_break_emvj",
+  "lead_type",
+  "column_break_sddv",
+  "campaign_type",
+  "column_break_myjf",
+  "lead_status",
+  "customer_details_section",
+  "customer_name",
+  "link",
+  "column_break_teqi",
+  "mobile_no",
+  "column_break_jpuo",
+  "city",
+  "column_break_zjvp",
+  "data_source",
+  "column_break_szro",
+  "login_status",
+  "bank_details_section",
+  "ref_no",
+  "column_break_pabq",
+  "app_status",
+  "column_break_tnpk",
+  "app_status_date",
+  "column_break_dpbg",
+  "column_break_ysjs",
+  "section_break_cery",
+  "remarks",
+  "attempt_date",
+  "lead_assigned"
+ ],
+ "fields": [
+  {
+   "fieldname": "campaign_details_section",
+   "fieldtype": "Section Break",
+   "label": "Campaign Details"
+  },
+  {
+   "fieldname": "campaign_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Campaign Date"
+  },
+  {
+   "fieldname": "column_break_hlma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cr_date",
+   "fieldtype": "Date",
+   "label": "C/R Date"
+  },
+  {
+   "fieldname": "column_break_emvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lead_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Lead Type",
+   "options": "\nReply\nClick"
+  },
+  {
+   "fieldname": "column_break_sddv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "campaign_type",
+   "fieldtype": "Select",
+   "label": "Campaign Type",
+   "options": "\nWhatsApp\nRCS\nSMS\nEmail"
+  },
+  {
+   "fieldname": "column_break_myjf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "lead_status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Lead Status",
+   "options": "Open\nTeam\nBank\nClosed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_teqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "column_break_jpuo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "column_break_zjvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_source",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Data Source",
+   "options": "\nBOB\nPNB\nNaukri\nL&T\nMetlife\nJana\nInnov\nVendor"
+  },
+  {
+   "fieldname": "column_break_szro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link",
+   "fieldtype": "Data",
+   "label": "Link",
+   "unique": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "login_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Login Status",
+   "options": "Pending\nCNR\nFollow up\nDenied\nDuplicate\nIP Approved\nVKYC\nSVKYC\nBKYC\nRisk\nCure Pending\nCure Done\nApproved\nRejected"
+  },
+  {
+   "fieldname": "ref_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Ref No"
+  },
+  {
+   "fieldname": "app_status",
+   "fieldtype": "Select",
+   "label": "App Status",
+   "options": "Incomplete\nComplete"
+  },
+  {
+   "fieldname": "bank_details_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "column_break_pabq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tnpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dpbg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ysjs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "app_status_date",
+   "fieldtype": "Date",
+   "label": "App Status Date"
+  },
+  {
+   "fieldname": "section_break_cery",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "lead_assigned",
+   "fieldtype": "Select",
+   "label": "Lead Assigned",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "attempt_date",
+   "fieldtype": "Date",
+   "label": "Last Attempt Date"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-17 14:08:27.584678",
+ "modified_by": "Administrator",
+ "module": "Credlawn",
+ "name": "Blasting",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name"
+}

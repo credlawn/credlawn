@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:link_name",
+ "creation": "2024-10-09 13:46:44.182458",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "full_link",
+  "link_name",
+  "column_break_vmtb",
+  "link_code",
+  "section_break_grha",
+  "linkpart1",
+  "column_break_bhaw",
+  "linkpart2",
+  "column_break_ybsa",
+  "linkpart3"
+ ],
+ "fields": [
+  {
+   "fieldname": "link_name",
+   "fieldtype": "Data",
+   "label": "Link Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "linkpart1",
+   "fieldtype": "Data",
+   "label": "Link Part 1"
+  },
+  {
+   "fieldname": "linkpart2",
+   "fieldtype": "Data",
+   "label": "Link Part 2"
+  },
+  {
+   "fieldname": "section_break_grha",
+   "fieldtype": "Section Break",
+   "label": "Link Verify"
+  },
+  {
+   "fieldname": "full_link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Link"
+  },
+  {
+   "fieldname": "column_break_bhaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ybsa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linkpart3",
+   "fieldtype": "Data",
+   "label": "Link Part 3"
+  },
+  {
+   "fieldname": "column_break_vmtb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Link Code"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-09 15:23:46.012717",
+ "modified_by": "Administrator",
+ "module": "Credlawn",
+ "name": "Bank Links",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

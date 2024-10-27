@@ -1,38 +1,45 @@
 frappe.ui.form.on('Cards', {
     file_type: function(frm) {
-        // Clear the sourced_by field
-        frm.set_value('sourced_by', '');
+        const filters = {
+            'Team': { 
+                'doctype': 'Employee', 
+                'status_field': 'employment_status', 
+                'status_value': 'Active', 
+                'name_field': 'employee_name' 
+            },
+            'Vendor': { 
+                'doctype': 'Vendor', 
+                'status_field': 'vendor_status', 
+                'status_value': 'Active', 
+                'name_field': 'vendor_name' 
+            },
+            'Campaign': { 
+                'doctype': 'Campaign', 
+                'status_field': 'campaign_status', 
+                'status_value': 'Active', 
+                'name_field': 'campaign_name' 
+            }
+        };
 
-        // Set the query for sourced_by based on file_type
-        if (frm.doc.file_type === 'Team') {
+        const selected_type = frm.doc.file_type;
+
+        if (filters[selected_type]) {
+            frm.set_value('source', filters[selected_type].doctype);
             frm.set_query('sourced_by', function() {
                 return {
                     filters: {
-                        'status': 'Active'
-                    },
-                    doctype: 'Employee'
+                        [filters[selected_type].status_field]: filters[selected_type].status_value
+                    }
                 };
             });
-        } else if (frm.doc.file_type === 'Vendor') {
-            frm.set_query('sourced_by', function() {
-                return {
-                    filters: {
-                        'status': 'Active'
-                    },
-                    doctype: 'Vendor'
-                };
-            });
-        } else if (frm.doc.file_type === 'Campaign') {
-            frm.set_query('sourced_by', function() {
-                return {
-                    filters: {
-                        'status': 'Active'
-                    },
-                    doctype: 'Campaign'
-                };
-            });
-        } else {
-            frm.set_query('sourced_by', null); // Clear query if no valid file_type
+        }
+
+    },
+    
+    refresh: function(frm) {
+        // Apply filter on sourced_by when the form is loaded
+        if (frm.doc.file_type) {
+            frm.trigger('file_type');
         }
     }
 });

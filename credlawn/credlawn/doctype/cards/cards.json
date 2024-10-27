@@ -1,6 +1,8 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "autoname",
  "creation": "2024-10-08 20:27:24.856815",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,6 +10,7 @@
   "sourcing_details_section",
   "file_type",
   "column_break_pmtx",
+  "sourcing_name",
   "sourced_by",
   "column_break_rqwf",
   "login_date",
@@ -44,10 +47,13 @@
    "options": "HDFC- Credlawn\nHDFC- RKPL\nHDFC- Balaji"
   },
   {
+   "depends_on": "eval:(doc.__islocal)",
    "fieldname": "sourced_by",
    "fieldtype": "Dynamic Link",
    "label": "Sourced By",
-   "options": "source"
+   "options": "source",
+   "print_hide": 1,
+   "report_hide": 1
   },
   {
    "default": "Team",
@@ -120,23 +126,37 @@
    "default": "Pending",
    "fieldname": "ipa_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "IP Status",
    "options": "Pending\nApproved\nDecline"
   },
   {
+   "default": "Employee",
    "fieldname": "source",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Source",
-   "options": "DocType"
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "sourcing_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sourcing By"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-27 00:10:23.937625",
+ "modified": "2024-10-27 05:18:37.006946",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Cards",
+ "naming_rule": "By script",
  "owner": "Administrator",
  "permissions": [
   {
@@ -152,7 +172,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "customer_name"
 }

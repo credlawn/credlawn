@@ -13,7 +13,8 @@
   "vendor_name",
   "vendor_code",
   "column_break_yisu",
-  "location"
+  "location",
+  "vendor_status"
  ],
  "fields": [
   {
@@ -41,12 +42,19 @@
    "fieldtype": "Data",
    "label": "Vendor Name",
    "unique": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "vendor_status",
+   "fieldtype": "Select",
+   "label": "Vendor Status",
+   "options": "\nActive\nInactive"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 01:51:14.768599",
+ "modified": "2024-10-27 01:01:48.956152",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Vendor",

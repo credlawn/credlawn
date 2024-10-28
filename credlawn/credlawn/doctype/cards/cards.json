@@ -27,7 +27,12 @@
   "ipa_status",
   "column_break_kqvx",
   "city",
-  "source"
+  "source",
+  "bank_details_section",
+  "reference_no",
+  "column_break_gfnk",
+  "column_break_ruox",
+  "column_break_ipjc"
  ],
  "fields": [
   {
@@ -147,12 +152,34 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Sourcing By"
+  },
+  {
+   "fieldname": "bank_details_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No"
+  },
+  {
+   "fieldname": "column_break_gfnk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ruox",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ipjc",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-27 05:18:37.006946",
+ "modified": "2024-10-28 12:31:32.626958",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Cards",

@@ -159,7 +159,7 @@ app_include_css = [
 scheduler_events = {
     "cron": {
         "* * * * *": [
-            "credlawn.scripts.send_new_lead.send_lead",
+            # "credlawn.scripts.send_new_lead.send_lead",
         ],
         "0 0 * * *": [  # This runs every day at midnight
             "credlawn.scripts.update_employee_age_n_tenure.scheduled_employee_update"
@@ -173,6 +173,7 @@ scheduler_events = {
         ]
     }
 }
+
 
 
 

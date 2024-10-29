@@ -38,7 +38,8 @@
   "last_working_date",
   "column_break_sehj",
   "tenure",
-  "column_break_wkeh"
+  "column_break_wkeh",
+  "birthday_month"
  ],
  "fields": [
   {
@@ -201,12 +202,20 @@
    "fieldname": "tenure",
    "fieldtype": "Data",
    "label": "Tenure"
+  },
+  {
+   "fieldname": "birthday_month",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Birthday Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-26 12:02:07.135489",
+ "modified": "2024-10-29 23:34:36.517907",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Employee",

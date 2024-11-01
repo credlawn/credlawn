@@ -145,13 +145,7 @@ app_include_css = [
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+
 
 # Scheduled Tasks
 # ---------------
@@ -166,7 +160,8 @@ scheduler_events = {
         ],
         "0 * * * *": [  # This runs every hour
             "credlawn.scripts.get_new_leads_from_url_shortener.fetch_and_process_urls",
-            "credlawn.scripts.update_clicks_from_url.fetch_visitor_record"
+            "credlawn.scripts.update_clicks_from_url.fetch_visitor_record",
+            "credlawn.scripts.email_processing.enqueue_email_processing"
         ],
         "*/5 * * * *": [  # This runs every 5 minutes
             "credlawn.scripts.create_short_url.run_post_request"

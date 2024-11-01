@@ -1,0 +1,299 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:reference_no",
+ "creation": "2024-10-30 17:29:05.681869",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_name",
+  "reference_no",
+  "promo_code",
+  "vkyc_status",
+  "pin_code",
+  "curable_flag",
+  "vkyc_link",
+  "qde_status",
+  "classification",
+  "column_break_lyml",
+  "creation_date",
+  "lc1_code",
+  "ipa_status",
+  "surrogate_eligibility",
+  "decline_description",
+  "dap_final_flag",
+  "company_code",
+  "decline_type",
+  "column_break_efrv",
+  "customer_type",
+  "company_name",
+  "current_status",
+  "decline_code",
+  "channel",
+  "lc2_code",
+  "dsa_code",
+  "bkyc_status",
+  "column_break_xhjv",
+  "sm_code",
+  "dropoff_reason",
+  "city",
+  "final_decision",
+  "kyc_type",
+  "lg_code",
+  "decision_date",
+  "bkyc_status_reason",
+  "column_break_rfhh",
+  "product_code",
+  "idcom_status",
+  "state",
+  "etb_nb_succ_flag",
+  "vkyc_expire_date",
+  "restart_flag",
+  "inprocess_classification"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_lyml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "Creation Date"
+  },
+  {
+   "fieldname": "column_break_efrv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Data",
+   "label": "Customer Type"
+  },
+  {
+   "fieldname": "column_break_xhjv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rfhh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sm_code",
+   "fieldtype": "Data",
+   "label": "SM Code"
+  },
+  {
+   "fieldname": "product_code",
+   "fieldtype": "Data",
+   "label": "Product Code"
+  },
+  {
+   "fieldname": "promo_code",
+   "fieldtype": "Data",
+   "label": "Promo Code"
+  },
+  {
+   "fieldname": "lc1_code",
+   "fieldtype": "Data",
+   "label": "LC-1 Code"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "dropoff_reason",
+   "fieldtype": "Data",
+   "label": "Drop-off Reason"
+  },
+  {
+   "fieldname": "idcom_status",
+   "fieldtype": "Data",
+   "label": "IDCOM Status"
+  },
+  {
+   "fieldname": "vkyc_status",
+   "fieldtype": "Data",
+   "label": "VKYC Status"
+  },
+  {
+   "fieldname": "ipa_status",
+   "fieldtype": "Data",
+   "label": "IPA Status"
+  },
+  {
+   "fieldname": "current_status",
+   "fieldtype": "Data",
+   "label": "Current Status"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "pin_code",
+   "fieldtype": "Data",
+   "label": "Pin Code"
+  },
+  {
+   "fieldname": "surrogate_eligibility",
+   "fieldtype": "Data",
+   "label": "Surrogate Eligibility"
+  },
+  {
+   "fieldname": "decline_code",
+   "fieldtype": "Data",
+   "label": "Decline Code"
+  },
+  {
+   "fieldname": "final_decision",
+   "fieldtype": "Data",
+   "label": "Final Decision"
+  },
+  {
+   "fieldname": "etb_nb_succ_flag",
+   "fieldtype": "Data",
+   "label": "ETB NB Succ Flag"
+  },
+  {
+   "fieldname": "curable_flag",
+   "fieldtype": "Data",
+   "label": "Curable Flag"
+  },
+  {
+   "fieldname": "decline_description",
+   "fieldtype": "Data",
+   "label": "Decline Description"
+  },
+  {
+   "fieldname": "channel",
+   "fieldtype": "Data",
+   "label": "Channel"
+  },
+  {
+   "fieldname": "kyc_type",
+   "fieldtype": "Data",
+   "label": "KYC Type"
+  },
+  {
+   "fieldname": "vkyc_expire_date",
+   "fieldtype": "Datetime",
+   "label": "VKYC Expire Date"
+  },
+  {
+   "fieldname": "vkyc_link",
+   "fieldtype": "Data",
+   "label": "VKYC Link"
+  },
+  {
+   "fieldname": "dap_final_flag",
+   "fieldtype": "Data",
+   "label": "DAP Final Flag"
+  },
+  {
+   "fieldname": "lc2_code",
+   "fieldtype": "Data",
+   "label": "LC-2 Code"
+  },
+  {
+   "fieldname": "lg_code",
+   "fieldtype": "Data",
+   "label": "LG Code"
+  },
+  {
+   "fieldname": "restart_flag",
+   "fieldtype": "Data",
+   "label": "Restart Flag"
+  },
+  {
+   "fieldname": "qde_status",
+   "fieldtype": "Data",
+   "label": "QDE Status"
+  },
+  {
+   "fieldname": "company_code",
+   "fieldtype": "Data",
+   "label": "Company Code"
+  },
+  {
+   "fieldname": "dsa_code",
+   "fieldtype": "Data",
+   "label": "DSA Code"
+  },
+  {
+   "fieldname": "decision_date",
+   "fieldtype": "Data",
+   "label": "Decision Date"
+  },
+  {
+   "fieldname": "inprocess_classification",
+   "fieldtype": "Data",
+   "label": "Inprocess Classification"
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Data",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "decline_type",
+   "fieldtype": "Data",
+   "label": "Decline Type"
+  },
+  {
+   "fieldname": "bkyc_status",
+   "fieldtype": "Data",
+   "label": "BKYC Status"
+  },
+  {
+   "fieldname": "bkyc_status_reason",
+   "fieldtype": "Data",
+   "label": "BKYC Status Reason"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-31 15:12:13.928274",
+ "modified_by": "Administrator",
+ "module": "Credlawn",
+ "name": "Adobe",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

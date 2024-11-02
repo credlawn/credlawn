@@ -15,6 +15,7 @@
   "vkyc_link",
   "qde_status",
   "classification",
+  "decision_month",
   "column_break_lyml",
   "creation_date",
   "lc1_code",
@@ -49,7 +50,8 @@
   "etb_nb_succ_flag",
   "vkyc_expire_date",
   "restart_flag",
-  "inprocess_classification"
+  "inprocess_classification",
+  "login_month"
  ],
  "fields": [
   {
@@ -268,12 +270,22 @@
    "fieldname": "bkyc_status_reason",
    "fieldtype": "Data",
    "label": "BKYC Status Reason"
+  },
+  {
+   "fieldname": "login_month",
+   "fieldtype": "Data",
+   "label": "Login Month"
+  },
+  {
+   "fieldname": "decision_month",
+   "fieldtype": "Data",
+   "label": "Decision Month"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 15:12:13.928274",
+ "modified": "2024-11-01 14:17:41.675205",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe",

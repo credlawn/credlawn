@@ -73,7 +73,9 @@ def process_excel_attachment(file_name):
             'bkyc_status': row.get('BKYC Status', 'Not Mapped') if pd.notna(row.get('BKYC Status')) else None,
             'bkyc_status_reason': row.get('BKYC Status Reason', 'Not Mapped') if pd.notna(row.get('BKYC Status Reason')) else None,
             'inprocess_classification': row.get('Inprocess Classification', 'Not Mapped') if pd.notna(row.get('Inprocess Classification')) else None,
-            'classification': row.get('Classification', 'Not Mapped') if pd.notna(row.get('Classification')) else None
+            'classification': row.get('Classification', 'Not Mapped') if pd.notna(row.get('Classification')) else None,
+            'login_month': row.get('LOGIN_MONTH', 'Not Mapped') if pd.notna(row.get('LOGIN_MONTH')) else None,
+            'decision_month': row.get('DECISION_M', 'Not Mapped') if pd.notna(row.get('DECISION_M')) else None
         })
 
     # Insert all records at once

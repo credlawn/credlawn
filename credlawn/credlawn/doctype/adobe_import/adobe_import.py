@@ -8,6 +8,7 @@ class AdobeImport(Document):
 
     def on_update(self):
         self.update_fields()
+        self.reload()
 
     def update_fields(self):
         # Update decision_date

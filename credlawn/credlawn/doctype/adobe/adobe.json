@@ -6,52 +6,73 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "customer_name",
-  "reference_no",
-  "promo_code",
-  "vkyc_status",
-  "pin_code",
-  "curable_flag",
-  "vkyc_link",
-  "qde_status",
-  "classification",
-  "decision_month",
-  "column_break_lyml",
+  "customer_details_section",
   "creation_date",
-  "lc1_code",
-  "ipa_status",
-  "surrogate_eligibility",
-  "decline_description",
-  "dap_final_flag",
-  "company_code",
-  "decline_type",
-  "column_break_efrv",
+  "pin_code",
+  "column_break_ejud",
+  "customer_name",
   "customer_type",
-  "company_name",
-  "current_status",
-  "decline_code",
-  "channel",
-  "lc2_code",
-  "dsa_code",
-  "bkyc_status",
-  "column_break_xhjv",
-  "sm_code",
-  "dropoff_reason",
+  "column_break_voll",
   "city",
-  "final_decision",
-  "kyc_type",
-  "lg_code",
-  "decision_date",
-  "bkyc_status_reason",
-  "column_break_rfhh",
-  "product_code",
-  "idcom_status",
+  "promo_code",
+  "column_break_gtjl",
   "state",
-  "etb_nb_succ_flag",
-  "vkyc_expire_date",
-  "restart_flag",
+  "company_name",
+  "current_flow_section",
+  "ipa_status",
+  "idcom_status",
+  "column_break_ppsi",
+  "current_status",
+  "qde_status",
+  "column_break_lgaf",
+  "dap_final_flag",
+  "surrogate_eligibility",
+  "column_break_brys",
+  "dropoff_reason",
   "inprocess_classification",
-  "login_month"
+  "kyc_flow_section",
+  "kyc_type",
+  "bkyc_status",
+  "column_break_jpkw",
+  "vkyc_status",
+  "bkyc_status_reason",
+  "column_break_xhjv",
+  "vkyc_link",
+  "classification",
+  "column_break_eqof",
+  "vkyc_expire_date",
+  "product_code",
+  "decline_flow_section",
+  "column_break_lyml",
+  "decision_date",
+  "curable_flag",
+  "column_break_efrv",
+  "decline_type",
+  "restart_flag",
+  "column_break_rfhh",
+  "decline_code",
+  "etb_nb_succ_flag",
+  "column_break_wjbi",
+  "decline_description",
+  "final_decision",
+  "dsa_details_section",
+  "channel",
+  "lg_code",
+  "column_break_yrws",
+  "dsa_code",
+  "column_break_zekv",
+  "lc1_code",
+  "column_break_qrew",
+  "lc2_code",
+  "other_details_section",
+  "login_month",
+  "column_break_fseq",
+  "decision_month",
+  "column_break_sfxt",
+  "sm_code",
+  "column_break_uucc",
+  "company_code",
+  "reference_no"
  ],
  "fields": [
   {
@@ -273,19 +294,113 @@
   },
   {
    "fieldname": "login_month",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Login Month"
   },
   {
    "fieldname": "decision_month",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Decision Month"
+  },
+  {
+   "fieldname": "column_break_ejud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_voll",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gtjl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "dsa_details_section",
+   "fieldtype": "Section Break",
+   "label": "DSA Details"
+  },
+  {
+   "fieldname": "column_break_yrws",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zekv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qrew",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_flow_section",
+   "fieldtype": "Section Break",
+   "label": "Current Flow"
+  },
+  {
+   "fieldname": "column_break_ppsi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lgaf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_brys",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "column_break_fseq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sfxt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uucc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "kyc_flow_section",
+   "fieldtype": "Section Break",
+   "label": "KYC Flow"
+  },
+  {
+   "fieldname": "column_break_jpkw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_eqof",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "decline_flow_section",
+   "fieldtype": "Section Break",
+   "label": "Decline Flow"
+  },
+  {
+   "fieldname": "column_break_wjbi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-01 14:17:41.675205",
+ "modified": "2024-11-02 16:51:09.435229",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe",

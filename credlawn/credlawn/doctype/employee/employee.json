@@ -32,18 +32,19 @@
   "employment_status",
   "column_break_yuot",
   "age",
+  "birthday_month",
   "exit_details_section",
-  "reason_for_leaving",
-  "column_break_pigr",
   "last_working_date",
-  "fnf_status",
-  "remarks",
-  "column_break_sehj",
+  "payment_date",
+  "column_break_pigr",
   "tenure",
   "final_amount",
+  "column_break_sehj",
+  "fnf_status",
+  "remarks",
   "column_break_wkeh",
-  "birthday_month",
-  "payment_date"
+  "reason_for_leaving",
+  "payment_proof"
  ],
  "fields": [
   {
@@ -236,12 +237,17 @@
    "fieldname": "remarks",
    "fieldtype": "Data",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "payment_proof",
+   "fieldtype": "Attach",
+   "label": "Payment Proof"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-04 13:59:28.082728",
+ "modified": "2024-11-04 14:40:28.197932",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Employee",

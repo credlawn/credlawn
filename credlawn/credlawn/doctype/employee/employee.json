@@ -36,10 +36,14 @@
   "reason_for_leaving",
   "column_break_pigr",
   "last_working_date",
+  "fnf_status",
+  "remarks",
   "column_break_sehj",
   "tenure",
+  "final_amount",
   "column_break_wkeh",
-  "birthday_month"
+  "birthday_month",
+  "payment_date"
  ],
  "fields": [
   {
@@ -210,12 +214,34 @@
    "label": "Birthday Month",
    "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
    "read_only": 1
+  },
+  {
+   "fieldname": "fnf_status",
+   "fieldtype": "Select",
+   "label": "FnF Status",
+   "options": "\nPending\nClosed"
+  },
+  {
+   "fieldname": "final_amount",
+   "fieldtype": "Currency",
+   "label": "Final Amount",
+   "precision": "2"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 23:34:36.517907",
+ "modified": "2024-11-04 13:59:28.082728",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Employee",

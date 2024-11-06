@@ -17,8 +17,9 @@ class Redirect(Document):
         return "Unknown"
 
     def get_ipinfo_access_token(self):
-        token_doc = frappe.get_all("Access Tokens", filters={"token_name": "ipinfo.io"}, fields=["access_token"], limit=1)
-        return token_doc[0].get("access_token") if token_doc else None
+        access_token_record = frappe.get_doc('Access Tokens', 'ipinfo.io')
+        access_token = access_token_record.get_password("access_token")
+        return access_token if access_token else None
 
     def get_device_browser_info(self, user_agent_string):
         user_agent = parse(user_agent_string)

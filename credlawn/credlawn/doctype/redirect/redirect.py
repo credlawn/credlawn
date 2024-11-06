@@ -13,7 +13,11 @@ class Redirect(Document):
     def get_ip_info(self, ip_address):
         access_token = self.get_ipinfo_access_token()
         if access_token:
-            return requests.get(f"https://ipinfo.io/{ip_address}/json?token={access_token}").json().get("city", "Unknown")
+            ip_info = requests.get(f"https://ipinfo.io/{ip_address}/json?token={access_token}").json()
+            city = ip_info.get("city", "Unknown")
+            region = ip_info.get("region", "Unknown")
+            # Combine city and region in the desired format "City - Region"
+            return f"{city} - {region}" if city != "Unknown" and region != "Unknown" else "Unknown"
         return "Unknown"
 
     def get_ipinfo_access_token(self):

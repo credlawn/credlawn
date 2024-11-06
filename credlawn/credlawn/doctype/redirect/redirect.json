@@ -6,39 +6,41 @@
  "engine": "InnoDB",
  "field_order": [
   "source",
-  "count",
+  "click_count",
   "ip_address",
   "timestamp",
   "column_break_zoyh",
   "click_type",
   "device",
-  "browser"
+  "browser",
+  "city",
+  "user_agent"
  ],
  "fields": [
   {
    "fieldname": "source",
    "fieldtype": "Data",
-   "label": "Source"
-  },
-  {
-   "fieldname": "count",
-   "fieldtype": "Int",
-   "label": "Count"
+   "label": "Source",
+   "read_only": 1
   },
   {
    "fieldname": "ip_address",
    "fieldtype": "Data",
-   "label": "IP Address"
+   "label": "IP Address",
+   "read_only": 1
   },
   {
    "fieldname": "timestamp",
    "fieldtype": "Datetime",
-   "label": "Timestamp"
+   "label": "Timestamp",
+   "read_only": 1
   },
   {
    "fieldname": "click_type",
-   "fieldtype": "Data",
-   "label": "Click Type"
+   "fieldtype": "Select",
+   "label": "Click Type",
+   "options": "\nNew\nRepeat",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_zoyh",
@@ -47,17 +49,38 @@
   {
    "fieldname": "device",
    "fieldtype": "Data",
-   "label": "Device"
+   "label": "Device",
+   "read_only": 1
   },
   {
    "fieldname": "browser",
    "fieldtype": "Data",
-   "label": "Browser"
+   "label": "Browser",
+   "read_only": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "read_only": 1
+  },
+  {
+   "fieldname": "user_agent",
+   "fieldtype": "Small Text",
+   "label": "User Agent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_count",
+   "fieldtype": "Int",
+   "label": "Click Count",
+   "read_only": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 17:43:13.349887",
+ "modified": "2024-11-06 15:18:50.592937",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Redirect",

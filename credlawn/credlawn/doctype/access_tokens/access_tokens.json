@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-06 15:20:50.141853",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "token_name",
+  "column_break_ifbt",
+  "access_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "token_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Token Name"
+  },
+  {
+   "fieldname": "column_break_ifbt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "access_token",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Access Token",
+   "length": 300
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-06 15:23:59.372735",
+ "modified_by": "Administrator",
+ "module": "Credlawn",
+ "name": "Access Tokens",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

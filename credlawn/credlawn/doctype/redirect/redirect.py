@@ -1,9 +1,30 @@
-# Copyright (c) 2024, Credlawn India Private Limited and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
-
+import requests
+from user_agents import parse
 
 class Redirect(Document):
-	pass
+    def before_insert(self):
+        self.click_count = 1
+        self.device, self.browser = self.get_device_browser_info(self.user_agent or "Mozilla/5.0")
+        self.city = self.get_ip_info(self.ip_address)
+        self.set_click_type(self.ip_address, self.source)
+
+    def get_ip_info(self, ip_address):
+        access_token = self.get_ipinfo_access_token()
+        if access_token:
+            return requests.get(f"https://ipinfo.io/{ip_address}/json?token={access_token}").json().get("city", "Unknown")
+        return "Unknown"
+
+    def get_ipinfo_access_token(self):
+        token_doc = frappe.get_all("Access Tokens", filters={"token_name": "ipinfo.io"}, fields=["access_token"], limit=1)
+        return token_doc[0].get("access_token") if token_doc else None
+
+    def get_device_browser_info(self, user_agent_string):
+        user_agent = parse(user_agent_string)
+        os = user_agent.os.family
+        device = "Android" if "Android" in os else "iOS" if "iOS" in os else "Mac OS" if "Mac" in os else "Windows" if "Windows" in os else "Android" if "Linux" in os else "Unknown"
+        return device, user_agent.browser.family
+
+    def set_click_type(self, ip_address, source):
+        self.click_type = "Repeat" if frappe.db.exists("Redirect", {"ip_address": ip_address, "source": source}) else "New"

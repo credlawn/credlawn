@@ -1,7 +1,8 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2024-10-18 12:15:46.794702",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -80,10 +81,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-06 15:18:50.592937",
+ "modified": "2024-11-07 09:26:25.196369",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Redirect",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -107,7 +109,9 @@
    "share": 1
   }
  ],
- "sort_field": "modified",
+ "show_title_field_in_link": 1,
+ "sort_field": "timestamp",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "source"
 }

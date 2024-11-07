@@ -39,6 +39,8 @@
   {
    "fieldname": "click_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Click Type",
    "options": "\nNew\nRepeat",
    "read_only": 1
@@ -50,18 +52,22 @@
   {
    "fieldname": "device",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Device",
    "read_only": 1
   },
   {
    "fieldname": "browser",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Browser",
    "read_only": 1
   },
   {
    "fieldname": "city",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "City",
    "read_only": 1
   },
@@ -81,7 +87,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 11:47:35.767677",
+ "modified": "2024-11-07 13:45:34.961103",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Redirect",

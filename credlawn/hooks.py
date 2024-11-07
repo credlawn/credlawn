@@ -16,8 +16,9 @@ app_include_css = [
 
 scheduler_events = {
     "cron": {
-        "* * * * *": [
-            # "credlawn.scripts.send_new_lead.send_lead",
+        "* * * * *": [  # This runs every minute
+            "credlawn.scripts.create_short_url.create_route_redirects"
+            # "credlawn.scripts.send_new_lead.send_lead",  # This is commented out
         ],
         "0 0 * * *": [  # This runs every day at midnight
             "credlawn.scripts.update_employee_age_n_tenure.scheduled_employee_update"
@@ -28,10 +29,11 @@ scheduler_events = {
             "credlawn.scripts.email_processing.enqueue_email_processing"
         ],
         "*/5 * * * *": [  # This runs every 5 minutes
-            "credlawn.scripts.create_short_url.run_post_request"
+            # "credlawn.scripts.create_short_url.run_post_request"
         ]
     }
 }
+
 
 
 

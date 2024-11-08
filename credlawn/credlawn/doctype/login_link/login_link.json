@@ -61,7 +61,7 @@
    "fieldname": "lc1_code",
    "fieldtype": "Select",
    "label": "LC-1 Code",
-   "options": "CIPL01",
+   "options": "\nSBCL02\nCIPL01",
    "reqd": 1
   },
   {
@@ -91,7 +91,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Link Type",
-   "options": "\nNormal\nTata\nSwiggy",
+   "options": "\nNormal XSBC-P25719\nTata XSBC-P25719\nSwiggy XSBC-P25719\nNormal XSBC-S42824\nTata XSBC-S42824\nSwiggy XSBC-S42824\nNormal XCLW-S42824\nTata XCLW-S42824\nSwiggy XCLW-S42824\nNormal XCLW-P25719\nTata XCLW-P25719\nSwiggy XCLW-P25719",
    "reqd": 1
   },
   {
@@ -179,7 +179,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-11 22:23:04.299650",
+ "modified": "2024-11-08 13:09:32.277807",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Login Link",

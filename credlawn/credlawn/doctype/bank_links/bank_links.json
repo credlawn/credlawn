@@ -1,83 +1,153 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:link_name",
+ "autoname": "format:{link_for}-{link_type}-{dsa_code}-{sm_code}",
  "creation": "2024-10-09 13:46:44.182458",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "full_link",
-  "link_name",
+  "section_break_jlib",
+  "dsa_code",
   "column_break_vmtb",
-  "link_code",
-  "section_break_grha",
+  "link_type",
+  "column_break_pwbo",
+  "sm_code",
+  "column_break_gppv",
+  "link_for",
+  "section_break_ndxr",
+  "full_link",
+  "section_break_jabo",
   "linkpart1",
-  "column_break_bhaw",
+  "linkpart4",
+  "column_break_samo",
   "linkpart2",
-  "column_break_ybsa",
-  "linkpart3"
+  "linkpart5",
+  "column_break_pcag",
+  "linkpart3",
+  "linkpart6"
  ],
  "fields": [
   {
-   "fieldname": "link_name",
-   "fieldtype": "Data",
-   "label": "Link Name",
-   "unique": 1
-  },
-  {
-   "fieldname": "linkpart1",
-   "fieldtype": "Data",
-   "label": "Link Part 1"
-  },
-  {
-   "fieldname": "linkpart2",
-   "fieldtype": "Data",
-   "label": "Link Part 2"
-  },
-  {
-   "fieldname": "section_break_grha",
-   "fieldtype": "Section Break",
-   "label": "Link Verify"
-  },
-  {
    "fieldname": "full_link",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Full Link"
-  },
-  {
-   "fieldname": "column_break_bhaw",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ybsa",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "linkpart3",
-   "fieldtype": "Data",
-   "label": "Link Part 3"
+   "fieldtype": "Small Text",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_vmtb",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "link_code",
-   "fieldtype": "Data",
+   "fieldname": "section_break_ndxr",
+   "fieldtype": "Section Break",
+   "label": "Full Link"
+  },
+  {
+   "fieldname": "section_break_jlib",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pwbo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dsa_code",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Link Code"
+   "label": "DSA Code",
+   "options": "\nXSBC\nXCLW",
+   "reqd": 1
+  },
+  {
+   "fieldname": "link_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Link Type",
+   "options": "\nNormal\nTata\nSwiggy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sm_code",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "SM Code",
+   "options": "\nP25719\nS42824",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gppv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link_for",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Link For",
+   "options": "\nTeam\nCampaign\nVendor",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_jabo",
+   "fieldtype": "Section Break",
+   "label": "Link Parts"
+  },
+  {
+   "fieldname": "linkpart1",
+   "fieldtype": "Data",
+   "label": "Link Part 1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_samo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linkpart2",
+   "fieldtype": "Data",
+   "label": "Link Part 2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pcag",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linkpart3",
+   "fieldtype": "Data",
+   "label": "Link Part 3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linkpart4",
+   "fieldtype": "Data",
+   "label": "Link Part 4",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linkpart5",
+   "fieldtype": "Data",
+   "label": "Link Part 5",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linkpart6",
+   "fieldtype": "Data",
+   "label": "Link Part 6",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-09 15:23:46.012717",
+ "modified": "2024-11-08 15:01:30.096524",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Bank Links",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

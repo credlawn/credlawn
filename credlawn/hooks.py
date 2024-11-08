@@ -24,13 +24,9 @@ scheduler_events = {
             "credlawn.scripts.update_employee_age_n_tenure.scheduled_employee_update"
         ],
         "0 * * * *": [  # This runs every hour
-            "credlawn.scripts.get_new_leads_from_url_shortener.fetch_and_process_urls",
-            "credlawn.scripts.update_clicks_from_url.fetch_visitor_record",
             "credlawn.scripts.email_processing.enqueue_email_processing"
-        ],
-        "*/5 * * * *": [  # This runs every 5 minutes
-            # "credlawn.scripts.create_short_url.run_post_request"
         ]
+        
     }
 }
 

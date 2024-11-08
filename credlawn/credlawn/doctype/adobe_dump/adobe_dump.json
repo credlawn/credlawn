@@ -16,6 +16,7 @@
   "reference_no",
   "column_break_gvxo",
   "customer_type",
+  "changed_value",
   "column_break_birt",
   "city",
   "bank_details_section",
@@ -297,12 +298,17 @@
    "fieldtype": "Date",
    "label": "Decision Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "changed_value",
+   "fieldtype": "Small Text",
+   "label": "Changed Value"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-04 12:40:22.179153",
+ "modified": "2024-11-07 19:40:10.701762",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe Dump",

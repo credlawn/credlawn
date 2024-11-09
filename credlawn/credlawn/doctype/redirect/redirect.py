@@ -16,7 +16,6 @@ class Redirect(Document):
             ip_info = requests.get(f"https://ipinfo.io/{ip_address}/json?token={access_token}").json()
             city = ip_info.get("city", "Unknown")
             region = ip_info.get("region", "Unknown")
-            # Combine city and region in the desired format "City - Region"
             return f"{city} - {region}" if city != "Unknown" and region != "Unknown" else "Unknown"
         return "Unknown"
 
@@ -33,3 +32,16 @@ class Redirect(Document):
 
     def set_click_type(self, ip_address, source):
         self.click_type = "Repeat" if frappe.db.exists("Redirect", {"ip_address": ip_address, "source": source}) else "New"
+
+    def after_insert(self):
+        blasting = frappe.get_all('Blasting', filters={'link': self.source}, fields=['name'])
+        if blasting:
+            frappe.db.set_value('Blasting', blasting[0].name, 'cr_date', self.timestamp)
+        else:
+            frappe.get_doc({
+                'doctype': 'Blasting',
+                'link': self.source,
+                'cr_date': self.timestamp,
+                'lead_type': 'Click',
+                'city': self.city
+            }).insert()

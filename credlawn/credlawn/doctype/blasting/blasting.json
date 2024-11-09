@@ -64,7 +64,7 @@
   },
   {
    "fieldname": "cr_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "C/R Date"
   },
   {
@@ -226,12 +226,14 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Credlawn India_new_lead_card",
    "fieldname": "whatsapp_account",
    "fieldtype": "Link",
    "label": "Whatsapp Account",
    "options": "Credlawn Whatsapp"
   },
   {
+   "default": "917905428513",
    "fieldname": "agent_number",
    "fieldtype": "Data",
    "label": "Agent Number"
@@ -240,7 +242,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 12:38:52.720071",
+ "modified": "2024-11-10 01:43:26.537606",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",
@@ -258,6 +260,15 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
   }
  ],
  "sort_field": "modified",

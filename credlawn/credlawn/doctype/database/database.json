@@ -147,7 +147,10 @@
   {
    "fieldname": "usage_history_section",
    "fieldtype": "Section Break",
-   "label": "Usage History"
+   "is_virtual": 1,
+   "label": "Usage History",
+   "print_hide": 1,
+   "report_hide": 1
   },
   {
    "fieldname": "column_break_ozot",
@@ -343,7 +346,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-09 18:33:08.388207",
+ "modified": "2024-11-10 00:00:47.053653",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Database",

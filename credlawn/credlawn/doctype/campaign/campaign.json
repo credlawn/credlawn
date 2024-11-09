@@ -6,15 +6,27 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "campaign_details_section",
+  "campaign_date",
   "campaign_name",
+  "vol1",
   "column_break_nfmh",
-  "campaign_status"
+  "campaign_type",
+  "volume",
+  "column_break_xkqu",
+  "data_type",
+  "login_link",
+  "column_break_mgzx",
+  "data_source",
+  "campaign_data_section",
+  "campaign_data"
  ],
  "fields": [
   {
    "fieldname": "campaign_name",
    "fieldtype": "Data",
    "label": "Campaign Name",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -22,17 +34,82 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Active",
-   "fieldname": "campaign_status",
+   "fieldname": "campaign_type",
    "fieldtype": "Select",
-   "label": "Campaign Status",
-   "options": "Active\nInactive"
+   "label": "Campaign Type",
+   "options": "\nWhatsApp\nSMS\nRCS\nEmail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xkqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "campaign_date",
+   "fieldtype": "Date",
+   "label": "Campaign Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "campaign_details_section",
+   "fieldtype": "Section Break",
+   "label": "Campaign Details"
+  },
+  {
+   "fieldname": "campaign_data_section",
+   "fieldtype": "Section Break",
+   "label": "Campaign Data"
+  },
+  {
+   "fieldname": "volume",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number Requested",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mgzx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Data Type",
+   "options": "\nNew\nUsed\nPartial Used\nCustom",
+   "reqd": 1
+  },
+  {
+   "fieldname": "campaign_data",
+   "fieldtype": "Table",
+   "options": "Campaigndata",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_source",
+   "fieldtype": "Select",
+   "label": "Data Source",
+   "options": "\nBOB\nPNB\nNaukri\nMetlife\nVendor"
+  },
+  {
+   "fieldname": "vol1",
+   "fieldtype": "Int",
+   "label": "Number Generated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "login_link",
+   "fieldtype": "Link",
+   "label": "Login Link",
+   "link_filters": "[[\"Bank Links\",\"link_for\",\"=\",\"Campaign\"]]",
+   "options": "Bank Links"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-27 01:19:27.401814",
+ "modified": "2024-11-09 21:53:54.540027",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Campaign",

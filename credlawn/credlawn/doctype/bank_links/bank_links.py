@@ -40,25 +40,31 @@ class BankLinks(Document):
             self.update_full_link_swiggy()
 
     def update_full_link_normal(self):
+        # Replace lc2_code with '{}' if link_for is 'Campaign'
+        lc2_code = '{}' if self.link_for == 'Campaign' else self.lc2_code or ''
         self.full_link = (
             f"{self.linkpart1 or ''}{self.dsa_code or ''}{self.linkpart2 or ''}"
             f"{self.sm_code or ''}{self.linkpart3 or ''}{self.lc1_code or ''}"
-            f"{self.linkpart4 or ''}{self.lc2_code or ''}{self.linkpart5 or ''}"
+            f"{self.linkpart4 or ''}{lc2_code}{self.linkpart5 or ''}"
         )
         self.save()
 
     def update_full_link_tata(self):
+        # Replace lc2_code with '{}' if link_for is 'Campaign'
+        lc2_code = '{}' if self.link_for == 'Campaign' else self.lc2_code or ''
         self.full_link = (
             f"{self.linkpart1 or ''}{self.dsa_code or ''}{self.linkpart2 or ''}"
             f"{self.dsa_code or ''}{self.linkpart3 or ''}{self.lc1_code or ''}"
-            f"{self.linkpart4 or ''}{self.lc2_code or ''}{self.linkpart5 or ''}{self.sm_code or ''}"
+            f"{self.linkpart4 or ''}{lc2_code}{self.linkpart5 or ''}{self.sm_code or ''}"
         )
         self.save()
 
     def update_full_link_swiggy(self):
+        # Replace lc2_code with '{}' if link_for is 'Campaign'
+        lc2_code = '{}' if self.link_for == 'Campaign' else self.lc2_code or ''
         self.full_link = (
             f"{self.linkpart1 or ''}{self.dsa_code or ''}{self.linkpart2 or ''}"
             f"{self.dsa_code or ''}{self.linkpart3 or ''}{self.lc1_code or ''}"
-            f"{self.linkpart4 or ''}{self.lc2_code or ''}{self.linkpart5 or ''}{self.sm_code or ''}{self.linkpart6 or ''}"
+            f"{self.linkpart4 or ''}{lc2_code}{self.linkpart5 or ''}{self.sm_code or ''}{self.linkpart6 or ''}"
         )
         self.save()

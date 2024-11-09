@@ -1,4 +1,4 @@
-frappe.listview_settings['Login Link'] = {
+frappe.listview_settings['Campaign'] = {
     onload: function(listview) {
         $('.layout-side-section').hide();
         $('.layout-main-section-wrapper, .layout-main-section').css('margin-left', '0');

@@ -1,5 +1,7 @@
 frappe.ui.form.on('Blasting', {
     onload: function(frm) {
+
+        $(frm.wrapper).find('.help-box.small.text-muted').hide();
         
         if (!frm.is_new()) {
             

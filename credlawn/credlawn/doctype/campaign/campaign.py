@@ -16,7 +16,7 @@ class Campaign(Document):
             data_source=self.data_source,  
             campaign_date=self.campaign_date, 
             campaign_type=self.campaign_type, 
-            login_link=self.login_link, 
+            login_link=self.login_link,
             queue="default", timeout=3000, 
             is_async=True)
 
@@ -48,6 +48,7 @@ def insert_campaign_data(campaign_name, volume, data_type, data_source, campaign
             new_campaign_data.parentfield = 'campaign_data'
             new_campaign_data.parenttype = 'Campaign'
             new_campaign_data.insert(ignore_permissions=True)
+
 
             successful_inserts += 1
         except Exception:

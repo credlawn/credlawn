@@ -33,6 +33,7 @@ class Campaigndata(Document):
 
     def after_insert(self):
         self.bank_link = self.get_bank_link(self.login_link)
+        self.source = self.name
         self.save()
         self.compare_mobile_number()
         self.update_database_dates_and_platforms()

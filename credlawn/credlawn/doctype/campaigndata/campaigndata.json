@@ -15,7 +15,8 @@
   "bank_link",
   "column_break_hogh",
   "data_source",
-  "campaign_type"
+  "campaign_type",
+  "source"
  ],
  "fields": [
   {
@@ -73,12 +74,17 @@
    "fieldtype": "Data",
    "label": "Bank Link",
    "length": 300
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "label": "Source"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-09 21:39:36.835965",
+ "modified": "2024-11-10 02:53:28.282566",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Campaigndata",

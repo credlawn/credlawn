@@ -36,6 +36,7 @@ class Overdraft(Document):
 
         self.balance_amount_with_gst = self.net_commission_amount - self.vendor_actual_paid_amount
         self.balance_amount_without_gst = self.balance_amount_with_gst - self.gst_amount
+        self.commission_credit_amount = self.commission_before_gst -self.tds_amount + self.extra_tds_amount
 
         if self.dispatch_date:
             dispatch_date = getdate(self.dispatch_date)
@@ -59,3 +60,4 @@ class Overdraft(Document):
         frappe.db.set_value('Overdraft', self.name, 'net_profit_amount', self.net_profit_amount)
         frappe.db.set_value('Overdraft', self.name, 'business_month', self.business_month)
         frappe.db.set_value('Overdraft', self.name, 'vendor_actual_paid_amount', self.vendor_actual_paid_amount)
+        frappe.db.set_value('Overdraft', self.name, 'commission_credit_amount', self.commission_credit_amount)

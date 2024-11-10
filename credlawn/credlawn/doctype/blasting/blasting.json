@@ -9,27 +9,25 @@
  "document_type": "Other",
  "engine": "InnoDB",
  "field_order": [
+  "lead_status_section",
+  "lead_status",
+  "column_break_imnn",
+  "login_status",
+  "column_break_wbov",
+  "link",
+  "column_break_pnjm",
   "campaign_details_section",
   "campaign_date",
+  "customer_name",
   "column_break_hlma",
   "cr_date",
+  "mobile_no",
   "column_break_emvj",
   "lead_type",
+  "city",
   "column_break_sddv",
   "campaign_type",
-  "column_break_myjf",
-  "lead_status",
-  "customer_details_section",
-  "customer_name",
-  "link",
-  "column_break_teqi",
-  "mobile_no",
-  "column_break_jpuo",
-  "city",
-  "column_break_zjvp",
   "data_source",
-  "column_break_szro",
-  "login_status",
   "bank_details_section",
   "ref_no",
   "column_break_pabq",
@@ -39,12 +37,25 @@
   "column_break_dpbg",
   "column_break_ysjs",
   "section_break_cery",
-  "remarks",
-  "attempt_date",
   "lead_assigned",
   "column_break_yrbg",
   "whatsapp_account",
-  "agent_number"
+  "column_break_vtia",
+  "agent_number",
+  "column_break_flph",
+  "column_break_sfbx",
+  "section_break_esbd",
+  "click_1",
+  "click_5",
+  "column_break_bcst",
+  "click_2",
+  "click_6",
+  "column_break_izmu",
+  "click_3",
+  "click_7",
+  "column_break_ihis",
+  "click_4",
+  "click_8"
  ],
  "fields": [
   {
@@ -65,7 +76,7 @@
   {
    "fieldname": "cr_date",
    "fieldtype": "Datetime",
-   "label": "C/R Date"
+   "label": "Latest Click"
   },
   {
    "fieldname": "column_break_emvj",
@@ -89,10 +100,6 @@
    "options": "\nWhatsApp\nRCS\nSMS\nEmail"
   },
   {
-   "fieldname": "column_break_myjf",
-   "fieldtype": "Column Break"
-  },
-  {
    "default": "Open",
    "fieldname": "lead_status",
    "fieldtype": "Select",
@@ -102,20 +109,11 @@
    "read_only": 1
   },
   {
-   "fieldname": "customer_details_section",
-   "fieldtype": "Section Break",
-   "label": "Customer Details"
-  },
-  {
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Customer Name"
-  },
-  {
-   "fieldname": "column_break_teqi",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "mobile_no",
@@ -125,17 +123,9 @@
    "label": "Mobile No"
   },
   {
-   "fieldname": "column_break_jpuo",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "city",
    "fieldtype": "Data",
    "label": "City"
-  },
-  {
-   "fieldname": "column_break_zjvp",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "data_source",
@@ -143,10 +133,6 @@
    "in_list_view": 1,
    "label": "Data Source",
    "options": "\nBOB\nPNB\nNaukri\nL&T\nMetlife\nJana\nInnov\nVendor"
-  },
-  {
-   "fieldname": "column_break_szro",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "link",
@@ -202,24 +188,18 @@
    "label": "App Status Date"
   },
   {
+   "collapsible": 1,
    "fieldname": "section_break_cery",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Lead Assignment"
   },
   {
-   "fieldname": "remarks",
-   "fieldtype": "Data",
-   "label": "Remarks"
-  },
-  {
+   "default": "No",
    "fieldname": "lead_assigned",
    "fieldtype": "Select",
    "label": "Lead Assigned",
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "attempt_date",
-   "fieldtype": "Date",
-   "label": "Last Attempt Date"
+   "options": "\nYes\nNo",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_yrbg",
@@ -230,19 +210,116 @@
    "fieldname": "whatsapp_account",
    "fieldtype": "Link",
    "label": "Whatsapp Account",
-   "options": "Credlawn Whatsapp"
+   "options": "Credlawn Whatsapp",
+   "read_only": 1
   },
   {
    "default": "917905428513",
    "fieldname": "agent_number",
    "fieldtype": "Data",
-   "label": "Agent Number"
+   "label": "Agent Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vtia",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_flph",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sfbx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lead_status_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Status"
+  },
+  {
+   "fieldname": "column_break_imnn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wbov",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pnjm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_esbd",
+   "fieldtype": "Section Break",
+   "label": "Click History"
+  },
+  {
+   "fieldname": "click_1",
+   "fieldtype": "Datetime",
+   "label": "1st Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bcst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "click_2",
+   "fieldtype": "Datetime",
+   "label": "2nd Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_izmu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ihis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "click_3",
+   "fieldtype": "Datetime",
+   "label": "3rd Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_4",
+   "fieldtype": "Datetime",
+   "label": "4th Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_5",
+   "fieldtype": "Datetime",
+   "label": "5th Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_6",
+   "fieldtype": "Datetime",
+   "label": "6th Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_7",
+   "fieldtype": "Datetime",
+   "label": "7th Click",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_8",
+   "fieldtype": "Datetime",
+   "label": "8th Click",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-10 01:43:26.537606",
+ "modified": "2024-11-10 12:28:15.665603",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

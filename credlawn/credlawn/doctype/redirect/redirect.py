@@ -34,6 +34,11 @@ class Redirect(Document):
         self.click_type = "Repeat" if frappe.db.exists("Redirect", {"ip_address": ip_address, "source": source}) else "New"
 
     def after_insert(self):
+
+        excluded_sources = ['hdfc', 'tata', 'swiggy']
+        if any(excluded_source.lower() in self.source.lower() for excluded_source in excluded_sources):
+            return
+            
         blasting = frappe.get_all('Blasting', filters={'link': self.source}, fields=['name'])
         if blasting:
             frappe.db.set_value('Blasting', blasting[0].name, 'cr_date', self.timestamp)

@@ -23,7 +23,7 @@ class Overdraft(Document):
         self.commission_with_gst = self.commission_before_gst + self.gst_amount
         self.tds_amount = self.commission_before_gst * self.tds / 100
         self.net_commission_amount = self.commission_with_gst - self.tds_amount
-        self.vendor_commission_amount = self.loan_amount * self.vendor_percentage / 100
+        self.vendor_commission_amount = self.loan_amount * self.vendor_percentage / 100 - self.pf_deduction
         self.vendor_tds_amount = self.vendor_commission_amount * self.tds / 100
         self.vendor_net_amount = self.vendor_commission_amount - self.vendor_tds_amount  
         self.earned_gst_amount = self.gst_amount

@@ -25,12 +25,6 @@ class Blasting(Document):
             self.customer_name = campaign_data.customer_name
             self.mobile_no = campaign_data.mob_no
             self.data_source = campaign_data.data_source
-            click_fields = ['click_1', 'click_2', 'click_3', 'click_4', 'click_5', 'click_6', 'click_7', 'click_8']
-            for i, click_field in enumerate(click_fields):
-                if not getattr(self, click_field):
-                    setattr(self, click_field, self.cr_date)
-                    break
-
             self.save(ignore_permissions=True)
             frappe.enqueue('credlawn.scripts.send_lead.send_lead', blasting_name=self.name)
         else:

@@ -41,12 +41,23 @@ class Redirect(Document):
             
         blasting = frappe.get_all('Blasting', filters={'link': self.source}, fields=['name'])
         if blasting:
-            frappe.db.set_value('Blasting', blasting[0].name, 'cr_date', self.timestamp)
+            blasting_doc = frappe.get_doc('Blasting', blasting[0].name)
+            blasting_doc.cr_date = self.timestamp
+            blasting_doc.save()
+
+            click_fields = ['click_1', 'click_2', 'click_3', 'click_4', 'click_5', 'click_6', 'click_7', 'click_8']
+            for click_field in click_fields:
+                if not getattr(blasting_doc, click_field):
+                    setattr(blasting_doc, click_field, self.timestamp)
+                    blasting_doc.save()
+                    break
+
         else:
             frappe.get_doc({
                 'doctype': 'Blasting',
                 'link': self.source,
                 'cr_date': self.timestamp,
+                'click_1': self.timestamp,
                 'lead_type': 'Click',
                 'city': self.city
             }).insert()

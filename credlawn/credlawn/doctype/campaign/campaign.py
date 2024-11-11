@@ -17,6 +17,7 @@ class Campaign(Document):
             campaign_date=self.campaign_date, 
             campaign_type=self.campaign_type, 
             login_link=self.login_link,
+            template_name=self.template_name,
             queue="default", timeout=3000, 
             is_async=True)
 
@@ -26,7 +27,7 @@ class Campaign(Document):
             WHERE parent = %s
         """, self.name)
 
-def insert_campaign_data(campaign_name, volume, data_type, data_source, campaign_date, campaign_type, login_link):
+def insert_campaign_data(campaign_name, volume, data_type, data_source, campaign_date, campaign_type, login_link, template_name):
     records = frappe.get_all('Database', filters={'data_type': data_type, 'data_source': data_source}, fields=['name', 'customer_name', 'mobile_no', 'data_source'])
     
     records_to_insert = records[:volume]
@@ -44,6 +45,7 @@ def insert_campaign_data(campaign_name, volume, data_type, data_source, campaign
             new_campaign_data.parent = campaign_name
             new_campaign_data.campaign_date = campaign_date
             new_campaign_data.login_link = login_link
+            new_campaign_data.sms_template_name = template_name
             new_campaign_data.campaign_type = campaign_type
             new_campaign_data.parentfield = 'campaign_data'
             new_campaign_data.parenttype = 'Campaign'

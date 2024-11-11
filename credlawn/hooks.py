@@ -13,7 +13,12 @@ app_include_css = [
     "/assets/credlawn/css/credlawn.css" 
 ]
 
-
+webhooks = [
+    {
+        "method": "POST",
+        "url": "/api/method/credlawn.scripts.credlawn_webhook.handle_webhook"
+    }
+]
 
 
 

@@ -1,14 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-11-11 13:05:01.152593",
+ "creation": "2024-11-11 15:01:48.649126",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "status_code",
+  "request_id",
   "webhook_type",
+  "mobile_no",
+  "amount",
   "column_break_twih",
+  "status_code",
   "timestamp",
+  "delivery_status",
+  "failed_reason",
   "section_break_ofok",
   "sender_headers",
   "section_break_ludt",
@@ -22,6 +27,12 @@
    "read_only": 1
   },
   {
+   "fieldname": "webhook_type",
+   "fieldtype": "Data",
+   "label": "Webhook Type",
+   "read_only": 1
+  },
+  {
    "fieldname": "column_break_twih",
    "fieldtype": "Column Break"
   },
@@ -29,16 +40,6 @@
    "fieldname": "timestamp",
    "fieldtype": "Datetime",
    "label": "Time Stamp",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_ludt",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "response_data",
-   "fieldtype": "JSON",
-   "label": "Response Data",
    "read_only": 1
   },
   {
@@ -52,19 +53,54 @@
    "read_only": 1
   },
   {
-   "fieldname": "webhook_type",
+   "fieldname": "section_break_ludt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "response_data",
+   "fieldtype": "JSON",
+   "label": "Response Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_no",
    "fieldtype": "Data",
-   "label": "Webhook Type",
+   "label": "Mobile No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Data",
+   "label": "Delivery Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_id",
+   "fieldtype": "Data",
+   "label": "Request ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "failed_reason",
+   "fieldtype": "Data",
+   "label": "Failed Reason",
    "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 14:26:18.078424",
+ "modified": "2024-11-11 15:44:25.307865",
  "modified_by": "Administrator",
  "module": "Credlawn",
- "name": "Webhook Response",
+ "name": "SMS Delivery",
  "owner": "Administrator",
  "permissions": [
   {

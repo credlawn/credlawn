@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestWebhookResponse(FrappeTestCase):
+class TestSMSDelivery(FrappeTestCase):
 	pass

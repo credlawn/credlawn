@@ -16,7 +16,7 @@ app_include_css = [
 webhooks = [
     {
         "method": "POST",
-        "url": "/api/method/credlawn.scripts.credlawn_webhook.handle_webhook"
+        "url": "/api/method/credlawn.webhook.sms_delivery_report.get_sms_delivery_report"
     }
 ]
 

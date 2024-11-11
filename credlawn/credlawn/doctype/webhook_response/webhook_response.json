@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-11 13:05:01.152593",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "status_code",
+  "column_break_twih",
+  "timestamp",
+  "section_break_ofok",
+  "sender_headers",
+  "section_break_ludt",
+  "response_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "status_code",
+   "fieldtype": "Int",
+   "label": "Status Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_twih",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "label": "Time Stamp",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ludt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "response_data",
+   "fieldtype": "JSON",
+   "label": "Response Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ofok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sender_headers",
+   "fieldtype": "JSON",
+   "label": "Sender Headers",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-11 14:05:03.231746",
+ "modified_by": "Administrator",
+ "module": "Credlawn",
+ "name": "Webhook Response",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

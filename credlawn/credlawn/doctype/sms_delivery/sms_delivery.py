@@ -39,12 +39,14 @@ class SMSDelivery(Document):
                                         amount = report.get("amount")
                                         timestamp = report.get("date")
                                         delivery_status = report.get("desc")
+                                        failed_reason = report.get("failedReason")
 
                                         self.request_id = request_id
                                         self.mobile_no = mobile_no
                                         self.amount = amount
                                         self.timestamp = timestamp
                                         self.delivery_status = delivery_status
+                                        self.failed_reason = failed_reason
 
                         self.save(ignore_permissions=True)
 
@@ -52,3 +54,22 @@ class SMSDelivery(Document):
                 return
             except Exception as e:
                 frappe.log_error(frappe.get_traceback(), f"Error in SMSDelivery after_insert: {str(e)}")
+
+
+        self.update_sms_status_to_campaign()
+
+    def update_sms_status_to_campaign(self):
+
+        if not self.mobile_no or not self.delivery_status:
+            return
+
+
+        campaign_data = frappe.get_all('Campaigndata', filters={'mobile_no': self.mobile_no, 'campaign_type': "SMS"}, fields=['name'])
+
+        if campaign_data:
+
+            for record in campaign_data:
+                campaign_doc = frappe.get_doc('Campaigndata', record['name'])
+                campaign_doc.message_status = self.delivery_status
+                campaign_doc.save(ignore_permissions=True)
+                frappe.db.commit() 

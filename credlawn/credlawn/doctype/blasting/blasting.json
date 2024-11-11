@@ -319,7 +319,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-10 12:28:15.665603",
+ "modified": "2024-11-12 04:12:42.275868",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",
@@ -345,7 +345,8 @@
    "print": 1,
    "report": 1,
    "role": "Guest",
-   "share": 1
+   "share": 1,
+   "write": 1
   }
  ],
  "sort_field": "modified",

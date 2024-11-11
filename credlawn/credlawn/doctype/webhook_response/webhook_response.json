@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "status_code",
+  "webhook_type",
   "column_break_twih",
   "timestamp",
   "section_break_ofok",
@@ -49,12 +50,18 @@
    "fieldtype": "JSON",
    "label": "Sender Headers",
    "read_only": 1
+  },
+  {
+   "fieldname": "webhook_type",
+   "fieldtype": "Data",
+   "label": "Webhook Type",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 14:05:03.231746",
+ "modified": "2024-11-11 14:26:18.078424",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Webhook Response",

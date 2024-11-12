@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "field:reference_no",
  "creation": "2024-11-04 13:09:02.111084",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,7 +16,8 @@
   {
    "fieldname": "reference_no",
    "fieldtype": "Data",
-   "label": "Reference No"
+   "label": "Reference No",
+   "unique": 1
   },
   {
    "fieldname": "customer_name",
@@ -40,15 +41,17 @@
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
+   "link_filters": "[[\"Employee\",\"department\",\"!=\",\"Management\"]]",
    "options": "Employee"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-04 13:10:28.166919",
+ "modified": "2024-11-12 11:22:02.851367",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Case Punching",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

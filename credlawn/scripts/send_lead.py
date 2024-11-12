@@ -17,7 +17,7 @@ def send_whatsapp_message(blasting_doc):
     # Get the relevant fields from the Blasting document
     customer_name = blasting_doc.customer_name
     mobile_no = blasting_doc.mobile_no
-    link = blasting_doc.link
+    link = "https://cipl.me/" + blasting_doc.link
     whatsapp_account = blasting_doc.whatsapp_account
     agent_number = blasting_doc.agent_number
 
@@ -57,6 +57,10 @@ def send_whatsapp_message(blasting_doc):
                         {
                             "type": "text",
                             "text": mobile_no
+                        },
+                        {
+                           "type": "text",
+                            "text": link
                         }
                     ]
                 }

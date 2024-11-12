@@ -1,6 +1,6 @@
 frappe.ui.form.on('Campaign', {
     refresh: function(frm) {
-        if (!frm.is_local && frm.doc.campaign_type === 'SMS' && frm.doc.campaign_status !== 'Sucess') {
+        if (!frm.is_local && frm.doc.campaign_type === 'SMS' && frm.doc.campaign_status !== 'Success') {
             frm.add_custom_button(__('Run Campaign'), function() {
                 
                 frappe.call({

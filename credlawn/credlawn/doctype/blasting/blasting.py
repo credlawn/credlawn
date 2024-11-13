@@ -1,6 +1,7 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+import time
 
 class Blasting(Document):
     def validate(self):
@@ -16,6 +17,7 @@ class Blasting(Document):
             self.app_status = "Complete"
 
     def after_insert(self):
+        # Fetch campaign data associated with this Blasting record
         campaign_data = frappe.db.get_value("Campaigndata", self.name, ["campaign_type", "campaign_date", "customer_name", "mob_no", "data_source"], as_dict=True)
 
         if campaign_data:
@@ -25,7 +27,11 @@ class Blasting(Document):
             self.customer_name = campaign_data.customer_name
             self.mobile_no = campaign_data.mob_no
             self.data_source = campaign_data.data_source
+            
             self.save(ignore_permissions=True)
-            frappe.enqueue('credlawn.scripts.send_lead.send_lead', blasting_name=self.name)
+            frappe.db.commit()
+
+            time.sleep(5)
+            frappe.enqueue('credlawn.scripts.send_new_leads.send_lead', blasting_name=self.name, queue="default", timeout=3000, is_async=True)
         else:
             return

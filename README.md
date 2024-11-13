@@ -1,7 +1,7 @@
 ## Credlawn
 
-CRM
+A platform designed to simplify and streamline processes.
 
 #### License
 
-mit
+MIT

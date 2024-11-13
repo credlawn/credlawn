@@ -17,13 +17,22 @@ def get_sms_delivery_report():
         
     headers = dict(frappe.local.request.headers)
 
-    webhook_response = frappe.new_doc('SMS Delivery')
-    webhook_response.sender_headers = json.dumps(headers)
-    webhook_response.response_data = json.dumps(data)  
-    webhook_response.status_code = 200   
-    webhook_response.insert(ignore_permissions=True)  
+    frappe.enqueue(method=process_sms_delivery, queue="default", timeout=300, is_async=True, headers=headers, data=data)
+
 
     return {
         "status": "success",
-        "message": "Webhook data received Successfully."
+        "message": "Data Received."
     }
+
+def process_sms_delivery(headers, data):
+
+    sms_delivery = frappe.new_doc('SMS Delivery')
+    sms_delivery.sender_headers = json.dumps(headers)
+    sms_delivery.response_data = json.dumps(data)  
+    sms_delivery.status_code = 200   
+    sms_delivery.insert(ignore_permissions=True)
+
+    frappe.db.commit()  
+
+

@@ -64,12 +64,14 @@ class SMSDelivery(Document):
             return
 
 
-        campaign_data = frappe.get_all('Campaigndata', filters={'mobile_no': self.mobile_no, 'campaign_type': "SMS"}, fields=['name'])
+        query = """
+        UPDATE `tabCampaigndata`
+        SET message_status = %s
+        WHERE mobile_no = %s AND campaign_type = 'SMS'
+        """
 
-        if campaign_data:
+        frappe.db.sql(query, (self.delivery_status, self.mobile_no))
 
-            for record in campaign_data:
-                campaign_doc = frappe.get_doc('Campaigndata', record['name'])
-                campaign_doc.message_status = self.delivery_status
-                campaign_doc.save(ignore_permissions=True)
-                frappe.db.commit() 
+        frappe.db.commit()
+
+

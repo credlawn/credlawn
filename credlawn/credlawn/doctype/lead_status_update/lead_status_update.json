@@ -39,7 +39,7 @@
    "fieldname": "lead_status",
    "fieldtype": "Select",
    "label": "Lead Status",
-   "options": "\nIP Approved\nIP Rejected"
+   "options": "\nIP Approved\nIP Rejected\nCNR\nNot Interested\nFollow up"
   },
   {
    "fieldname": "column_break_nnhi",
@@ -53,7 +53,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 16:22:12.440584",
+ "modified": "2024-11-13 16:48:22.279636",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Lead Status Update",

@@ -26,6 +26,7 @@ class Blasting(Document):
             self.mobile_no = campaign_data.mob_no
             self.data_source = campaign_data.data_source
             self.save(ignore_permissions=True)
-            frappe.enqueue('credlawn.scripts.send_lead.send_lead', blasting_name=self.name)
+            frappe.enqueue('credlawn.scripts.send_new_leads.send_lead', blasting_name=self.name, queue="default", timeout=3000, is_async=True, retry=3)
+            time.sleep(5)
         else:
             return

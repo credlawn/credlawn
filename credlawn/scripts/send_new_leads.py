@@ -3,23 +3,36 @@ import time
 import requests
 
 @frappe.whitelist()
-def send_lead(blasting_name):
-    # Adding a small delay (100ms)
-    time.sleep(0.1)  # 100ms delay
+def send_leads():
+    # Fetch all Blasting records where 'lead_assigned' = 'No'
+    blasting_docs = frappe.get_all('Blasting', filters={'lead_assigned': 'No'}, fields=['name', 'customer_name', 'mobile_no', 'link', 'whatsapp_account'])
 
-    # Fetch the updated Blasting document
-    blasting_doc = frappe.get_doc('Blasting', blasting_name)
-    
-    # Now send the WhatsApp message
-    send_whatsapp_message(blasting_doc)
+    # Fetch agent numbers where 'allow_lead' = 'Yes'
+    agent_numbers = frappe.get_all('Agent Number', filters={'allow_lead': 'Yes'}, fields=['agent_id', 'mobile_no', 'agent_name'])
 
-def send_whatsapp_message(blasting_doc):
-    # Get the relevant fields from the Blasting document
+    if not agent_numbers:
+        frappe.log_error("No agents found with 'allow_lead' = 'Yes'.", "Agent Number Error")
+        return
+
+    # Iterate through each Blasting document
+    for idx, blasting_doc in enumerate(blasting_docs):
+        blasting_doc_details = frappe.get_doc('Blasting', blasting_doc.name)
+        
+        # Get the agent to send the lead to (round-robin approach)
+        agent = agent_numbers[idx % len(agent_numbers)]  # Distribute leads in round-robin fashion
+
+        # Send the WhatsApp message to the selected agent
+        send_whatsapp_message(blasting_doc_details, agent)
+
+        # Wait for 5 seconds before processing the next lead
+        time.sleep(5)
+
+def send_whatsapp_message(blasting_doc, agent):
     customer_name = blasting_doc.customer_name
     mobile_no = blasting_doc.mobile_no
     link = "https://cipl.me/" + blasting_doc.link
     whatsapp_account = blasting_doc.whatsapp_account
-    agent_number = blasting_doc.agent_number
+    agent_number = agent['mobile_no']
 
     # Fetch the corresponding Credlawn Whatsapp record
     credlawn_record = frappe.get_doc('Credlawn Whatsapp', whatsapp_account)
@@ -82,3 +95,7 @@ def send_whatsapp_message(blasting_doc):
     if response.status_code == 200:
         # If successful, update the Blasting document to indicate the lead has been assigned
         frappe.db.set_value('Blasting', blasting_doc.name, 'lead_assigned', 'Yes')
+        frappe.db.set_value('Blasting', blasting_doc.name, 'agent_number', agent_number)
+        frappe.db.commit()
+    else:
+        frappe.log_error(f"Failed to send message for {blasting_doc.name} to agent {agent['agent_name']} ({agent['mobile_no']}). Error: {response.text}")

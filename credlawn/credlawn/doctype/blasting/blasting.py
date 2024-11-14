@@ -30,8 +30,6 @@ class Blasting(Document):
             
             self.save(ignore_permissions=True)
             frappe.db.commit()
-
-            time.sleep(5)
-            frappe.enqueue('credlawn.scripts.send_new_leads.send_lead', blasting_name=self.name, queue="default", timeout=3000, is_async=True)
+            
         else:
             return

@@ -12,7 +12,9 @@
   "column_break_rprw",
   "mobile_no",
   "column_break_nnhi",
-  "reference_no"
+  "reference_no",
+  "section_break_jobs",
+  "agent_number"
  ],
  "fields": [
   {
@@ -57,12 +59,21 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Mobile No"
+  },
+  {
+   "fieldname": "section_break_jobs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "agent_number",
+   "fieldtype": "Data",
+   "label": "Agent Number"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 18:15:51.269960",
+ "modified": "2024-11-13 19:46:00.257095",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Lead Status Update",

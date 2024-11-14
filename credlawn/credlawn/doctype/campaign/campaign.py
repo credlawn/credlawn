@@ -32,8 +32,16 @@ def insert_campaign_data(campaign_name, volume, data_type, data_source, campaign
     
     records_to_insert = records[:volume]
     successful_inserts = 0
+    total_records = len(records_to_insert)
 
-    for record in records_to_insert:
+    frappe.publish_realtime('campaign_insert_progress', {
+        'campaign': campaign_name,
+        'current': 0,
+        'total': total_records,
+        'eta': total_records * 0.10,
+    }, user=frappe.session.user)
+
+    for i, record in enumerate(records_to_insert):
         try:
             new_campaign_data = frappe.new_doc('Campaigndata')
             latest_idx = frappe.db.get_value('Campaigndata', filters={}, fieldname='MAX(idx)')
@@ -51,13 +59,28 @@ def insert_campaign_data(campaign_name, volume, data_type, data_source, campaign
             new_campaign_data.parenttype = 'Campaign'
             new_campaign_data.insert(ignore_permissions=True)
 
-
             successful_inserts += 1
+
+            progress = (i + 1)
+            eta_seconds = 0.10 * (total_records - progress)
+            frappe.publish_realtime('campaign_insert_progress', {
+                'campaign': campaign_name,
+                'current': progress,
+                'total': total_records,
+                'eta': eta_seconds,
+            }, user=frappe.session.user)
+
         except Exception:
             pass
 
     frappe.db.set_value('Campaign', campaign_name, 'vol1', successful_inserts)
-
+    frappe.db.set_value('Campaign', campaign_name, 'campaign_status', "Created")
     frappe.db.commit()
 
-    
+    frappe.publish_realtime('campaign_insert_progress', {
+        'campaign': campaign_name,
+        'current': total_records,
+        'total': total_records,
+        'eta': 0,
+        'success': True
+    }, user=frappe.session.user)

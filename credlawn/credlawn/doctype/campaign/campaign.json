@@ -134,16 +134,15 @@
   },
   {
    "fieldname": "campaign_status",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "Campaign Status",
-   "options": "\nSuccess\nFailed",
    "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 15:54:39.451622",
+ "modified": "2024-11-14 21:29:21.949452",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Campaign",

@@ -30,7 +30,8 @@ scheduler_events = {
         "0 * * * *": [  # This runs every hour
             "credlawn.scripts.email_processing.enqueue_email_processing",
             "credlawn.scripts.clean_redirect_link.delete_redirect_link",
-            "credlawn.scripts.delete_bot_click_entry.delete_bot_click_records"
+            "credlawn.scripts.delete_bot_click_entry.delete_bot_click_records",
+            "credlawn.scripts.update_campaign_lead_status.update_status"
         ],
 
         "*/5 * * * *": [  # This runs every 5 minutes

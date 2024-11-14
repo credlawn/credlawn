@@ -11,18 +11,14 @@ class LeadStatusUpdate(Document):
                 frappe.throw("Invalid Reference No. Please try again.")
             self.reference_no = str(self.reference_no).upper().strip()
 
-
         if not self.source and not self.mobile_no:
             frappe.throw("Please enter 'Source' or 'Mobile No'")
-        
 
         if self.source:
             self.source = str(self.source).strip() 
-
             self.source = self.source.lower() 
             if not re.match(r'^[a-z]{5}$', self.source):  
                 frappe.throw("Please enter correct Source Code.")
-
 
         if self.mobile_no:
             self.mobile_no = str(self.mobile_no).strip()
@@ -37,18 +33,34 @@ class LeadStatusUpdate(Document):
         self.reload()
 
     def update_agent_number(self):
-        if self.source:
-            blasting = frappe.get_all('Blasting', filters={'name': self.source}, fields=['agent_number'])
+        if self.mobile_no:
+            blasting = frappe.get_all('Blasting', filters={'mobile_no': self.mobile_no}, fields=['agent_number', 'name', 'mobile_no'])
             if blasting:
                 agent_number = blasting[0].get('agent_number')
-                if agent_number:
-                    frappe.db.set_value('Lead Status Update', self.name, 'agent_number', agent_number)
-                    frappe.db.commit()
+                source = blasting[0].get('name') 
+                mobile_no = blasting[0].get('mobile_no')
 
-        elif self.mobile_no:
-            blasting = frappe.get_all('Blasting', filters={'mobile_no': self.mobile_no}, fields=['agent_number'])
-            if blasting:
-                agent_number = blasting[0].get('agent_number')
+                if source:
+                    frappe.db.set_value('Lead Status Update', self.name, 'source', source)
+
+                if mobile_no:
+                    frappe.db.set_value('Lead Status Update', self.name, 'mobile_no', mobile_no)
+
                 if agent_number:
                     frappe.db.set_value('Lead Status Update', self.name, 'agent_number', agent_number)
-                    frappe.db.commit()
+
+                frappe.db.commit()
+
+        elif self.source:
+            blasting = frappe.get_all('Blasting', filters={'name': self.source}, fields=['agent_number', 'name', 'mobile_no'])
+            if blasting:
+                agent_number = blasting[0].get('agent_number')
+                mobile_no = blasting[0].get('mobile_no') 
+
+                if mobile_no:
+                    frappe.db.set_value('Lead Status Update', self.name, 'mobile_no', mobile_no)
+
+                if agent_number:
+                    frappe.db.set_value('Lead Status Update', self.name, 'agent_number', agent_number)
+
+                frappe.db.commit()

@@ -12,10 +12,11 @@
   "lead_status_section",
   "lead_status",
   "column_break_imnn",
-  "login_status",
+  "status_update_date",
   "column_break_wbov",
-  "link",
+  "reference_no",
   "column_break_pnjm",
+  "link",
   "campaign_details_section",
   "campaign_date",
   "customer_name",
@@ -28,14 +29,6 @@
   "column_break_sddv",
   "campaign_type",
   "data_source",
-  "bank_details_section",
-  "ref_no",
-  "column_break_pabq",
-  "app_status",
-  "column_break_tnpk",
-  "app_status_date",
-  "column_break_dpbg",
-  "column_break_ysjs",
   "section_break_cery",
   "lead_assigned",
   "column_break_yrbg",
@@ -100,13 +93,13 @@
    "options": "\nWhatsApp\nRCS\nSMS\nEmail"
   },
   {
-   "default": "Open",
+   "default": "Pending",
    "fieldname": "lead_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Lead Status",
-   "options": "Open\nTeam\nBank\nClosed",
-   "read_only": 1
+   "options": "Pending\nCNR\nFollow up\nDenied\nDuplicate\nIP Approved\nIP Rejected"
   },
   {
    "fieldname": "customer_name",
@@ -141,53 +134,6 @@
    "unique": 1
   },
   {
-   "default": "Pending",
-   "fieldname": "login_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Login Status",
-   "options": "Pending\nCNR\nFollow up\nDenied\nDuplicate\nIP Approved\nVKYC\nSVKYC\nBKYC\nRisk\nCure Pending\nCure Done\nApproved\nRejected"
-  },
-  {
-   "fieldname": "ref_no",
-   "fieldtype": "Data",
-   "in_standard_filter": 1,
-   "label": "Ref No"
-  },
-  {
-   "fieldname": "app_status",
-   "fieldtype": "Select",
-   "label": "App Status",
-   "options": "Incomplete\nComplete"
-  },
-  {
-   "fieldname": "bank_details_section",
-   "fieldtype": "Section Break",
-   "label": "Bank Details"
-  },
-  {
-   "fieldname": "column_break_pabq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_tnpk",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_dpbg",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ysjs",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "app_status_date",
-   "fieldtype": "Date",
-   "label": "App Status Date"
-  },
-  {
    "collapsible": 1,
    "fieldname": "section_break_cery",
    "fieldtype": "Section Break",
@@ -197,6 +143,8 @@
    "default": "No",
    "fieldname": "lead_assigned",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Lead Assigned",
    "options": "\nYes\nNo",
    "read_only": 1
@@ -313,12 +261,25 @@
    "fieldtype": "Datetime",
    "label": "8th Click",
    "read_only": 1
+  },
+  {
+   "fieldname": "status_update_date",
+   "fieldtype": "Date",
+   "label": "Status Update Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Reference No",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 11:35:50.922079",
+ "modified": "2024-11-14 13:41:08.705327",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

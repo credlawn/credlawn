@@ -4,29 +4,31 @@ import requests
 
 @frappe.whitelist()
 def send_leads():
-    if frappe.db.get_value("Job Lock", "send_leads_lock", "status") == "locked":
-        frappe.log_error("Job is already running.", "Job Lock")
+
+    frappe.enqueue('credlawn.scripts.send_new_leads.send_leads_async', queue='long', timeout=3600, is_async=True)
+
+def send_leads_async():
+
+
+    blasting_docs = frappe.get_all('Blasting', filters={'lead_assigned': 'No'}, fields=['name', 'customer_name', 'mobile_no', 'link', 'whatsapp_account'])
+
+    # Fetch agent numbers where 'allow_lead' = 'Yes'
+    agent_numbers = frappe.get_all('Agent Number', filters={'allow_lead': 'Yes'}, fields=['agent_id', 'mobile_no', 'agent_name'])
+
+    if not agent_numbers:
+        frappe.log_error("No agents found with 'allow_lead' = 'Yes'.", "Agent Number Error")
         return
 
-    frappe.db.set_value("Job Lock", "send_leads_lock", "status", "locked")
-    frappe.db.commit()
+    for idx, blasting_doc in enumerate(blasting_docs):
+        blasting_doc_details = frappe.get_doc('Blasting', blasting_doc.name)
+        
+        agent = agent_numbers[idx % len(agent_numbers)]  # Distribute leads in round-robin fashion
 
-    try:
-        blasting_docs = frappe.get_all('Blasting', filters={'lead_assigned': 'No'}, fields=['name', 'customer_name', 'mobile_no', 'link', 'whatsapp_account'])
-        agent_numbers = frappe.get_all('Agent Number', filters={'allow_lead': 'Yes'}, fields=['agent_id', 'mobile_no', 'agent_name'])
 
-        if not agent_numbers:
-            frappe.log_error("No agents found with 'allow_lead' = 'Yes'.", "Agent Number Error")
-            return
+        send_whatsapp_message(blasting_doc_details, agent)
 
-        for idx, blasting_doc in enumerate(blasting_docs):
-            blasting_doc_details = frappe.get_doc('Blasting', blasting_doc.name)
-            agent = agent_numbers[idx % len(agent_numbers)]
-            send_whatsapp_message(blasting_doc_details, agent)
-            time.sleep(60)
-    finally:
-        frappe.db.set_value("Job Lock", "send_leads_lock", "status", "unlocked")
-        frappe.db.commit()
+
+        time.sleep(60)
 
 def send_whatsapp_message(blasting_doc, agent):
     customer_name = blasting_doc.customer_name
@@ -41,9 +43,10 @@ def send_whatsapp_message(blasting_doc, agent):
     access_token = credlawn_record.get_password("access_token")
     template_name = credlawn_record.template_name
 
+    # Prepare the message data
     data = {
         "messaging_product": "whatsapp",
-        "to": agent_number,
+        "to": agent_number, 
         "type": "template",
         "template": {
             "name": template_name,
@@ -72,7 +75,7 @@ def send_whatsapp_message(blasting_doc, agent):
                             "text": mobile_no
                         },
                         {
-                            "type": "text",
+                           "type": "text",
                             "text": link
                         }
                     ]
@@ -80,6 +83,7 @@ def send_whatsapp_message(blasting_doc, agent):
             ]
         }
     }
+
 
     response = requests.post(
         f'https://graph.facebook.com/v20.0/{phone_no_id}/messages',
@@ -90,7 +94,9 @@ def send_whatsapp_message(blasting_doc, agent):
         json=data
     )
 
+
     if response.status_code == 200:
+
         frappe.db.set_value('Blasting', blasting_doc.name, 'lead_assigned', 'Yes')
         frappe.db.set_value('Blasting', blasting_doc.name, 'agent_number', agent_number)
         frappe.db.set_value('Blasting', blasting_doc.name, 'agent_name', agent_name)

@@ -279,7 +279,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 13:41:08.705327",
+ "modified": "2024-11-14 14:33:48.930364",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",
@@ -309,7 +309,7 @@
    "write": 1
   }
  ],
- "sort_field": "modified",
+ "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
  "title_field": "customer_name"

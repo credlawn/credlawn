@@ -141,13 +141,13 @@
    "label": "Lead Assignment"
   },
   {
-   "default": "No",
+   "default": "Hold",
    "fieldname": "lead_assigned",
    "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Lead Assigned",
-   "options": "\nYes\nNo",
+   "options": "\nYes\nNo\nHold",
    "read_only": 1
   },
   {
@@ -286,7 +286,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 14:41:13.001669",
+ "modified": "2024-11-14 17:14:01.490447",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

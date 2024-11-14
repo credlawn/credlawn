@@ -36,6 +36,7 @@
   "column_break_vtia",
   "agent_number",
   "column_break_flph",
+  "agent_name",
   "column_break_sfbx",
   "section_break_esbd",
   "click_1",
@@ -274,12 +275,18 @@
    "in_standard_filter": 1,
    "label": "Reference No",
    "read_only": 1
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 14:33:48.930364",
+ "modified": "2024-11-14 14:41:13.001669",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

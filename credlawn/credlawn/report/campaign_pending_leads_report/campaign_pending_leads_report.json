@@ -14,27 +14,33 @@
    "width": 0
   },
   {
-   "fieldname": "customer_name",
-   "fieldtype": "Data",
-   "label": "Customer Name",
-   "width": 180
-  },
-  {
    "fieldname": "data_source",
    "fieldtype": "Select",
    "label": "Data Source",
    "width": 130
   },
   {
-   "fieldname": "login_status",
+   "fieldname": "lead_status",
    "fieldtype": "Data",
-   "label": "Login Status",
+   "label": "Lead Status",
    "width": 0
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Lead Assigned",
+   "width": 180
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "width": 180
   },
   {
    "fieldname": "mobile_no",
    "fieldtype": "Data",
-   "label": "Mobile No",
+   "label": "Customer No",
    "width": 150
   }
  ],
@@ -43,17 +49,17 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 27,
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-10-08 14:36:45.780899",
+ "modified": "2024-11-14 14:56:42.223351",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Campaign Pending Leads Report",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT cr_date, lead_type, customer_name, data_source, login_status, mobile_no\nFROM tabBlasting\nWHERE lead_status = 'Open'\nORDER BY cr_date DESC;",
+ "query": "SELECT cr_date, lead_type, data_source, lead_status, agent_name, customer_name, mobile_no\nFROM tabBlasting\nWHERE lead_status = 'Pending'\nORDER BY cr_date DESC;",
  "ref_doctype": "Blasting",
  "report_name": "Campaign Pending Leads Report",
  "report_type": "Query Report",

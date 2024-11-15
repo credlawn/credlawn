@@ -13,14 +13,22 @@ frappe.listview_settings['Blasting'] = {
                 primary_action_label: __('Assign Now'),
                 primary_action: function() {
                     var num_leads = dialog.get_value('num_leads');
-                    frappe.call({
-                        method: 'credlawn.scripts.assign_lead_mannually.assign_lead',
-                        args: { num_leads: num_leads },
-                        callback: function(response) {
-                            frappe.msgprint(response.message);
+                    frappe.confirm(
+                        __('Are you sure you want to assign {0} leads?', [num_leads]),
+                        function() {
+                            frappe.call({
+                                method: 'credlawn.scripts.assign_lead_mannually.assign_lead',
+                                args: { num_leads: num_leads },
+                                callback: function(response) {
+                                    frappe.msgprint(response.message);
+                                    dialog.hide();
+                                }
+                            });
+                        },
+                        function() {
                             dialog.hide();
                         }
-                    });
+                    );
                 }
             });
             dialog.show();

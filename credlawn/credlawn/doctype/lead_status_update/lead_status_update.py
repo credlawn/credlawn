@@ -34,11 +34,12 @@ class LeadStatusUpdate(Document):
 
     def update_agent_number(self):
         if self.mobile_no:
-            blasting = frappe.get_all('Blasting', filters={'mobile_no': self.mobile_no}, fields=['agent_number', 'name', 'mobile_no'])
+            blasting = frappe.get_all('Blasting', filters={'mobile_no': self.mobile_no}, fields=['agent_number', 'name', 'mobile_no', 'agent_name'])
             if blasting:
                 agent_number = blasting[0].get('agent_number')
                 source = blasting[0].get('name') 
                 mobile_no = blasting[0].get('mobile_no')
+                agent_name = blasting[0].get('agent_name')
 
                 if source:
                     frappe.db.set_value('Lead Status Update', self.name, 'source', source)
@@ -48,6 +49,9 @@ class LeadStatusUpdate(Document):
 
                 if agent_number:
                     frappe.db.set_value('Lead Status Update', self.name, 'agent_number', agent_number)
+
+                if agent_number:
+                    frappe.db.set_value('Lead Status Update', self.name, 'agent_name', agent_name)
 
                 frappe.db.commit()
 

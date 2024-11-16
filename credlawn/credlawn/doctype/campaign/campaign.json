@@ -80,10 +80,9 @@
   },
   {
    "fieldname": "data_type",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Data Type",
-   "options": "\nNew\nUsed\nPartial Used\nCustom",
    "reqd": 1
   },
   {
@@ -142,7 +141,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 21:29:21.949452",
+ "modified": "2024-11-16 13:48:22.994013",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Campaign",

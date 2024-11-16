@@ -35,7 +35,7 @@ class Redirect(Document):
 
     def after_insert(self):
         # Exclude based on source or browser containing 'bot', 'BOT', or 'Bot'
-        excluded_sources = ['hdfc', 'tata', 'swiggy', 'campt']
+        excluded_sources = ['hdfc', 'tata', 'swiggy', 'campt', 'camph', 'camps']
         if any(excluded_source.lower() in self.source.lower() for excluded_source in excluded_sources) or 'bot' in self.browser.lower():
             return
         

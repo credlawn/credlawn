@@ -77,7 +77,7 @@ def send_sms_async(campaign_name):
             if len(recipient_batch) == batch_size or i == len(camp_data_records) - 1:
                 data = {
                     "template_id": record_data.template_id,
-                    "short_url": "0",
+                    "short_url": "1",
                     "realTimeResponse": "1",
                     "recipients": [create_recipient_data(r, campaign_doc) for r in recipient_batch]  # Use document data
                 }

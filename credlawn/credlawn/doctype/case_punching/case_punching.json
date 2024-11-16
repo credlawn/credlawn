@@ -7,8 +7,10 @@
  "field_order": [
   "customer_name",
   "reference_no",
+  "employee_name",
   "column_break_qhrn",
   "mobile_no",
+  "punching_date",
   "column_break_hldh",
   "employee"
  ],
@@ -17,6 +19,7 @@
    "fieldname": "reference_no",
    "fieldtype": "Data",
    "label": "Reference No",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -24,7 +27,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Customer Name"
+   "label": "Customer Name",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_qhrn",
@@ -35,7 +39,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Mobile No"
+   "label": "Mobile No",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_hldh",
@@ -48,13 +53,27 @@
    "in_standard_filter": 1,
    "label": "Employee",
    "link_filters": "[[\"Employee\",\"department\",\"!=\",\"Management\"]]",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "punching_date",
+   "fieldtype": "Date",
+   "label": "Punching Date",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 18:22:08.071779",
+ "modified": "2024-11-16 12:16:41.858856",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Case Punching",

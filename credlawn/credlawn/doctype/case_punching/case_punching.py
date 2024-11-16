@@ -1,6 +1,7 @@
 import frappe
 from frappe.model.document import Document
 import re
+from frappe.utils import nowdate
 
 class CasePunching(Document):
     def validate(self):
@@ -32,5 +33,16 @@ class CasePunching(Document):
             self.customer_name = self.customer_name.title().strip()
 
     def after_insert(self):
+        self.update_employee_name()
 
-        pass
+    def on_update(self):
+        self.update_employee_name()
+        self.reload()
+
+    def update_employee_name(self):
+        employee = frappe.get_doc("Employee", self.employee)
+        if employee:
+            frappe.db.set_value("Case Punching", self.name, "employee_name", employee.employee_name)
+
+        if not self.punching_date:
+            frappe.db.set_value("Case Punching", self.name, "punching_date", nowdate())

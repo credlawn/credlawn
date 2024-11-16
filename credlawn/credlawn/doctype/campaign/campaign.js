@@ -13,12 +13,13 @@ frappe.ui.form.on('Campaign', {
                     ? __('About {0} minute remaining', [minutes])
                     : __('About {0} minutes remaining', [minutes]);
 
-            let message = __("Inserting {0} of {1}, {2}", [data.current, data.total, eta_message]);
+            let message = __("Creating Short Link {0} of {1}, {2}", [data.current, data.total, eta_message]);
 
             frm.dashboard.show_progress(__('Campaign Insertion Progress'), percent, message);
 
             if (data.current === data.total) {
-                frm.dashboard.show_progress(__('Campaign Insertion Progress'), 100, __("100 out of 100 records created successfully"));
+                frm.dashboard.show_progress(__('Campaign Insertion Progress'), 100, __("{0} out of {1} Link created successfully", [data.total, data.total]));
+
                 
                 if (frm.page) {
                     frm.page.set_indicator(__('Completed'), 'green');
@@ -27,7 +28,7 @@ frappe.ui.form.on('Campaign', {
                 setTimeout(() => {
                     frm.dashboard.hide();
                     frm.reload_doc();
-                }, 2000);
+                }, 5000);
             } else {
                 if (frm.page) {
                     frm.page.set_indicator(__('In Progress'), 'orange');

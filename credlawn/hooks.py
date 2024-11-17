@@ -25,7 +25,8 @@ webhooks = [
 scheduler_events = {
     "cron": {
         "0 0 * * *": [  # This runs every day at midnight
-            "credlawn.scripts.update_employee_age_n_tenure.scheduled_employee_update"
+            "credlawn.scripts.update_employee_age_n_tenure.scheduled_employee_update",
+            "credlawn.scripts.find_duplicate_in_adobe.update_file_type"
         ],
         "0 * * * *": [  # This runs every hour
             "credlawn.scripts.email_processing.enqueue_email_processing",

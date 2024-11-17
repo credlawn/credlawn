@@ -34,6 +34,11 @@ scheduler_events = {
             "credlawn.scripts.delete_bot_click_entry.delete_bot_click_records"
         ],
 
+        "*/10 * * * *": [  # This runs every 10 minutes
+            "credlawn.scripts.update_campaign_lead_status.update_status"
+        ],
+
+
         "*/5 * * * *": [  # This runs every 5 minutes
             "credlawn.scripts.send_new_leads.send_leads"
         ]

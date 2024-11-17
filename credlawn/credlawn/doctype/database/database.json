@@ -338,15 +338,14 @@
   {
    "default": "New",
    "fieldname": "data_type",
-   "fieldtype": "Select",
-   "label": "Data Type",
-   "options": "\nNew\nUsed\nPartial Used\nCustom\nRecent"
+   "fieldtype": "Data",
+   "label": "Data Type"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-10 00:00:47.053653",
+ "modified": "2024-11-16 13:41:43.746758",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Database",

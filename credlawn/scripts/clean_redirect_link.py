@@ -10,7 +10,7 @@ def delete_redirect_link():
             fields=['name', 'source']
         )
 
-        valid_sources = {'hdfc', 'tata', 'swiggy'}
+        valid_sources = {'hdfc', 'tata', 'swiggy', 'campt', 'camph', 'camps'}
 
         for redirect in redirects_to_delete:
             try:

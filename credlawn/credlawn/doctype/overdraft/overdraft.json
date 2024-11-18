@@ -87,6 +87,7 @@
   {
    "fieldname": "dispatch_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Dispatch Date"
   },
   {
@@ -101,6 +102,7 @@
   {
    "fieldname": "case_type",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Case Type",
    "options": "\nCredlawn\nVendor\nLakshmi"
   },
@@ -122,6 +124,7 @@
   {
    "fieldname": "sourced_by",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Sourced By"
   },
   {
@@ -147,6 +150,7 @@
   {
    "fieldname": "loan_amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Loan Amount",
    "precision": "2"
   },
@@ -344,6 +348,7 @@
   {
    "fieldname": "business_month",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Business Month",
    "options": "\nSep'24\nOct'24\nNov'24\nDec'24\nJan'25\nFeb'25\nMar'25\nApr'25\nMay'25\nJun'25\nJul'25\nAug'25\nSep'25\nOct'25"
   },
@@ -366,6 +371,7 @@
    "default": "Pending",
    "fieldname": "balance_amount_status",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Balance Amount Status",
    "options": "Paid\nPending"
   },
@@ -408,7 +414,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 11:21:06.316967",
+ "modified": "2024-11-18 11:34:50.608358",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Overdraft",

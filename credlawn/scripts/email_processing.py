@@ -67,7 +67,7 @@ def process_excel_attachment(file_name):
             'vkyc_link': row.get('CAPTURE_LINK', 'Not Mapped') if pd.notna(row.get('CAPTURE_LINK')) else None,
             'company_code': row.get('COMPANY_CODE', 'Not Mapped') if pd.notna(row.get('COMPANY_CODE')) else None,
             'dsa_code': row.get('VARIABLE_VALUE', 'Not Mapped') if pd.notna(row.get('VARIABLE_VALUE')) else None,
-            'decision_date': row.get('FINAL_DECISION_DATE', 'Not Mapped') if pd.notna(row.get('FINAL_DECISION_DATE')) else None,
+            'adobe_decision_date': row.get('FINAL_DECISION_DATE', 'Not Mapped') if pd.notna(row.get('FINAL_DECISION_DATE')) else None,
             'qde_status': row.get('QDE_STATUS', 'Not Mapped') if pd.notna(row.get('QDE_STATUS')) else None,
             'decline_type': row.get('Decline Type', 'Not Mapped') if pd.notna(row.get('Decline Type')) else None,
             'bkyc_status': row.get('BKYC Status', 'Not Mapped') if pd.notna(row.get('BKYC Status')) else None,

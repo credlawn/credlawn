@@ -61,7 +61,11 @@
   "column_break_qiqw",
   "balance_amount_status",
   "column_break_bpqw",
-  "column_break_utvu"
+  "actual_paid_to_vendor",
+  "actual_paid_to_laxmi",
+  "column_break_utvu",
+  "payment_date_vendor",
+  "payment_date_laxmi"
  ],
  "fields": [
   {
@@ -379,12 +383,32 @@
    "label": "Commission Credit Amount",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "actual_paid_to_vendor",
+   "fieldtype": "Currency",
+   "label": "Actual Paid to Vendor"
+  },
+  {
+   "fieldname": "actual_paid_to_laxmi",
+   "fieldtype": "Currency",
+   "label": "Actual Paid to Laxmi"
+  },
+  {
+   "fieldname": "payment_date_vendor",
+   "fieldtype": "Date",
+   "label": "Payment Date Vendor"
+  },
+  {
+   "fieldname": "payment_date_laxmi",
+   "fieldtype": "Date",
+   "label": "Payment Date Laxmi"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-10 20:01:21.093674",
+ "modified": "2024-11-18 11:21:06.316967",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Overdraft",

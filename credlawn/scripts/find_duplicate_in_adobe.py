@@ -19,7 +19,7 @@ def update_file_type():
         
         # For each record, check dap_final_flag to determine if it's Complete or Incomplete
         for record in group:
-            if record['dap_final_flag'] == 'Yes':
+            if str(record['dap_final_flag']).strip().lower() == 'yes':
                 frappe.db.set_value('Adobe', record['name'], 'file_type', f'{file_type} Complete')
             else:
                 frappe.db.set_value('Adobe', record['name'], 'file_type', f'{file_type} Incomplete')

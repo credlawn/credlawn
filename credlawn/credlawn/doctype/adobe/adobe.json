@@ -8,7 +8,7 @@
  "field_order": [
   "customer_details_section",
   "creation_date",
-  "pin_code",
+  "final_decision_date",
   "column_break_ejud",
   "customer_name",
   "customer_type",
@@ -44,17 +44,17 @@
   "product_code",
   "decline_flow_section",
   "column_break_lyml",
-  "decision_date",
+  "decline_type",
   "curable_flag",
   "column_break_efrv",
-  "decline_type",
+  "decline_code",
   "restart_flag",
   "column_break_rfhh",
-  "decline_code",
+  "decline_description",
   "etb_nb_succ_flag",
   "column_break_wjbi",
-  "decline_description",
   "final_decision",
+  "pin_code",
   "dsa_details_section",
   "channel",
   "lg_code",
@@ -72,6 +72,7 @@
   "file_type",
   "column_break_sfxt",
   "sm_code",
+  "adobe_decision_date",
   "column_break_uucc",
   "company_code",
   "reference_no"
@@ -90,6 +91,8 @@
   {
    "fieldname": "customer_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Customer Name"
   },
   {
@@ -265,11 +268,6 @@
    "label": "DSA Code"
   },
   {
-   "fieldname": "decision_date",
-   "fieldtype": "Data",
-   "label": "Decision Date"
-  },
-  {
    "fieldname": "inprocess_classification",
    "fieldtype": "Data",
    "label": "Inprocess Classification"
@@ -406,13 +404,25 @@
   {
    "fieldname": "file_type",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "File Type"
+  },
+  {
+   "fieldname": "adobe_decision_date",
+   "fieldtype": "Data",
+   "label": "Adobe Decision Date"
+  },
+  {
+   "fieldname": "final_decision_date",
+   "fieldtype": "Date",
+   "label": "Decision Date"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-17 11:28:07.428123",
+ "modified": "2024-11-17 20:00:12.221371",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe",

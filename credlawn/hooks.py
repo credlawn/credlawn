@@ -31,7 +31,8 @@ scheduler_events = {
             "credlawn.scripts.email_processing.enqueue_email_processing",
             "credlawn.scripts.clean_redirect_link.delete_redirect_link",
             "credlawn.scripts.delete_bot_click_entry.delete_bot_click_records",
-            "credlawn.scripts.find_duplicate_in_adobe.update_file_type"
+            "credlawn.scripts.find_duplicate_in_adobe.update_file_type",
+            "credlawn.scripts.create_adobe_database_from_adobe.update_adobe_database_records"
         ],
 
         "*/10 * * * *": [  # This runs every 10 minutes

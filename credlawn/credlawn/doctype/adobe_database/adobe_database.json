@@ -2,13 +2,13 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:reference_no",
- "creation": "2024-11-17 10:53:57.673515",
+ "creation": "2024-11-18 12:50:47.462388",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "customer_details_section",
   "creation_date",
-  "pin_code",
+  "final_decision_date",
   "column_break_ejud",
   "customer_name",
   "customer_type",
@@ -44,17 +44,17 @@
   "product_code",
   "decline_flow_section",
   "column_break_lyml",
-  "decision_date",
+  "decline_type",
   "curable_flag",
   "column_break_efrv",
-  "decline_type",
+  "decline_code",
   "restart_flag",
   "column_break_rfhh",
-  "decline_code",
+  "decline_description",
   "etb_nb_succ_flag",
   "column_break_wjbi",
-  "decline_description",
   "final_decision",
+  "pin_code",
   "dsa_details_section",
   "channel",
   "lg_code",
@@ -88,9 +88,9 @@
    "label": "Creation Date"
   },
   {
-   "fieldname": "pin_code",
-   "fieldtype": "Data",
-   "label": "Pin Code"
+   "fieldname": "final_decision_date",
+   "fieldtype": "Date",
+   "label": "Decision Date"
   },
   {
    "fieldname": "column_break_ejud",
@@ -99,6 +99,8 @@
   {
    "fieldname": "customer_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Customer Name"
   },
   {
@@ -260,9 +262,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "decision_date",
+   "fieldname": "decline_type",
    "fieldtype": "Data",
-   "label": "Decision Date"
+   "label": "Decline Type"
   },
   {
    "fieldname": "curable_flag",
@@ -274,9 +276,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "decline_type",
+   "fieldname": "decline_code",
    "fieldtype": "Data",
-   "label": "Decline Type"
+   "label": "Decline Code"
   },
   {
    "fieldname": "restart_flag",
@@ -288,9 +290,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "decline_code",
+   "fieldname": "decline_description",
    "fieldtype": "Data",
-   "label": "Decline Code"
+   "label": "Decline Description"
   },
   {
    "fieldname": "etb_nb_succ_flag",
@@ -302,14 +304,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "decline_description",
-   "fieldtype": "Data",
-   "label": "Decline Description"
-  },
-  {
    "fieldname": "final_decision",
    "fieldtype": "Data",
    "label": "Final Decision"
+  },
+  {
+   "fieldname": "pin_code",
+   "fieldtype": "Data",
+   "label": "Pin Code"
   },
   {
    "collapsible": 1,
@@ -366,6 +368,11 @@
    "label": "Login Month"
   },
   {
+   "fieldname": "duplicate_finder",
+   "fieldtype": "Data",
+   "label": "Duplicate Finder"
+  },
+  {
    "fieldname": "column_break_fseq",
    "fieldtype": "Column Break"
   },
@@ -373,6 +380,13 @@
    "fieldname": "decision_month",
    "fieldtype": "Date",
    "label": "Decision Month"
+  },
+  {
+   "fieldname": "file_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "File Type"
   },
   {
    "fieldname": "column_break_sfxt",
@@ -397,22 +411,12 @@
    "fieldtype": "Data",
    "label": "Reference No",
    "unique": 1
-  },
-  {
-   "fieldname": "duplicate_finder",
-   "fieldtype": "Data",
-   "label": "Duplicate Finder"
-  },
-  {
-   "fieldname": "file_type",
-   "fieldtype": "Data",
-   "label": "File Type"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-17 10:55:34.216862",
+ "modified": "2024-11-18 12:51:42.816613",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe Database",

@@ -38,6 +38,7 @@
   "column_break_flph",
   "agent_name",
   "column_break_sfbx",
+  "assigned_date",
   "section_break_esbd",
   "click_1",
   "click_5",
@@ -281,12 +282,18 @@
    "fieldtype": "Data",
    "label": "Agent Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "assigned_date",
+   "fieldtype": "Date",
+   "label": "Lead Assigned Date",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 17:14:01.490447",
+ "modified": "2024-11-18 14:37:54.159994",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

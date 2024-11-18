@@ -31,14 +31,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.lead_status == 'IP Approved'",
    "fieldname": "reference_no",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Reference No",
-   "mandatory_depends_on": "eval:doc.lead_status == 'IP Approved'",
-   "unique": 1
+   "mandatory_depends_on": "eval:doc.lead_status == 'IP Approved'"
   },
   {
    "fieldname": "column_break_rprw",
@@ -87,7 +85,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 12:05:05.197506",
+ "modified": "2024-11-18 13:56:23.590586",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Lead Status Update",

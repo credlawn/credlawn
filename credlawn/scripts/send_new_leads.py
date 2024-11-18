@@ -1,6 +1,7 @@
 import frappe
 import time
 import requests
+from frappe.utils import today
 
 @frappe.whitelist()
 def send_leads():
@@ -37,6 +38,7 @@ def send_whatsapp_message(blasting_doc, agent):
     whatsapp_account = blasting_doc.whatsapp_account
     agent_number = agent['mobile_no']
     agent_name = agent['agent_name']
+    assigned_date = today()
 
     credlawn_record = frappe.get_doc('Credlawn Whatsapp', whatsapp_account)
     phone_no_id = credlawn_record.phone_no_id
@@ -100,6 +102,7 @@ def send_whatsapp_message(blasting_doc, agent):
         frappe.db.set_value('Blasting', blasting_doc.name, 'lead_assigned', 'Yes')
         frappe.db.set_value('Blasting', blasting_doc.name, 'agent_number', agent_number)
         frappe.db.set_value('Blasting', blasting_doc.name, 'agent_name', agent_name)
+        frappe.db.set_value('Blasting', blasting_doc.name, 'assigned_date', assigned_date)
         frappe.db.commit()
     else:
         frappe.log_error(f"Failed to send message for {blasting_doc.name} to agent {agent['agent_name']} ({agent['mobile_no']}). Error: {response.text}")

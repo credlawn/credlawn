@@ -32,7 +32,8 @@ scheduler_events = {
             "credlawn.scripts.clean_redirect_link.delete_redirect_link",
             "credlawn.scripts.delete_bot_click_entry.delete_bot_click_records",
             "credlawn.scripts.find_duplicate_in_adobe.update_file_type",
-            "credlawn.scripts.create_adobe_database_from_adobe.update_adobe_database_records"
+            "credlawn.scripts.create_adobe_database_from_adobe.update_adobe_database_records",
+            "credlawn.scripts.fetch_mobile_no_from_svkyc_link.process_svkyc_link_records"
         ],
 
         "*/10 * * * *": [  # This runs every 10 minutes

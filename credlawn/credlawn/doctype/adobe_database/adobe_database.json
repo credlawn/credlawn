@@ -6,6 +6,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_break_lxxs",
+  "change_log",
   "customer_details_section",
   "creation_date",
   "final_decision_date",
@@ -411,12 +413,22 @@
    "fieldtype": "Data",
    "label": "Reference No",
    "unique": 1
+  },
+  {
+   "fieldname": "section_break_lxxs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "change_log",
+   "fieldtype": "Small Text",
+   "label": "Change Log",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 12:51:42.816613",
+ "modified": "2024-11-19 13:39:54.807271",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe Database",

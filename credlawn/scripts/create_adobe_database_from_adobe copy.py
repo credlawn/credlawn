@@ -18,15 +18,15 @@ def update_adobe_database_records():
         reference_no = adobe['reference_no']
 
         try:
+            # Check if the record with the same reference_no exists in Adobe Database
             existing_record = frappe.db.get_value('Adobe Database', {'reference_no': reference_no}, ['name', 'decision_date'])
 
+            # Prepare data for updating or creating the record
             update_data = {}
             change_log = []
 
-            decision_date = adobe.get('decision_date')
-            final_decision_date = adobe.get('final_decision_date')
-
-            change_log.append('<ul style="list-style-type: none; padding: 0; margin: 0;">')
+            decision_date = adobe.get('decision_date')  # Get decision_date from Adobe doctype
+            final_decision_date = adobe.get('final_decision_date')  # Get final_decision_date
 
             for field in ['promo_code', 'decline_description', 'decline_code', 'bkyc_status', 'product_code', 
                           'bkyc_status_reason', 'vkyc_link', 'vkyc_expire_date', 'vkyc_status', 'kyc_type', 
@@ -39,41 +39,40 @@ def update_adobe_database_records():
                           'final_decision_date']:
                 value = adobe.get(field)
                 if value:
+                    # Compare the existing value with the new value
                     if existing_record:
                         old_value = frappe.db.get_value('Adobe Database', existing_record, field)
                         if old_value != value:
-                            field_name = field.replace('_', ' ').title()
-                            change_log.append(f'<li style="margin: 5px 0;"><b>{field_name}:</b> <span style="color:green; padding-left: 10px;">{old_value}</span> <span style="color:red;">--> {value}</span></li>')
+                            # Log the change in the desired format
+                            change_log.append(f"{field.replace('_', ' ').title()}: {old_value} --> {value}")
                             update_data[field] = value
                     else:
-                        field_name = field.replace('_', ' ').title()
-                        change_log.append(f'<li style="margin: 5px 0;"><b>{field_name}:</b> {value}</li>')
                         update_data[field] = value
 
-            change_log.append('</ul>')
-
-            if final_decision_date:
-                formatted_date = final_decision_date.strftime('%d-%m-%Y')
-                change_log.append('<br><b>Decision Date:</b> <span style="color:blue;">' + formatted_date + '</span>')
-
             if existing_record:
+                # Update the existing record in Adobe Database if there are changes
                 if change_log:
-                    frappe.db.set_value('Adobe Database', existing_record, 'change_log', "".join(change_log))
+                    change_log.append(f"\nDecision Date: {final_decision_date}")  # Add blank line before decision_date
+                    frappe.db.set_value('Adobe Database', existing_record, 'change_log', "\n".join(change_log))
                     frappe.db.set_value('Adobe Database', existing_record, update_data)
 
             else:
-                # Only add to change_log for new records if there's initial data to log
+                # If record doesn't exist, create a new one in Adobe Database
+                new_data = {"reference_no": adobe.get('reference_no')}
+                new_data.update(update_data)
+
+                doc = frappe.get_doc({
+                    "doctype": "Adobe Database",
+                    **new_data
+                })
+
                 if change_log:
-                    new_data = {"reference_no": adobe.get('reference_no')}
-                    new_data.update(update_data)
+                    change_log.append(f"\nDecision Date: {final_decision_date}")  # Add blank line before decision_date
+                    doc.change_log = "\n".join(change_log)
 
-                    doc = frappe.get_doc({
-                        "doctype": "Adobe Database",
-                        **new_data
-                    })
-
-                    doc.insert()
+                doc.insert()
 
         except Exception as e:
+            # Log the error for the current record and continue with the next one
             frappe.log_error(message=str(e), title=f"Error syncing record {reference_no}")
             continue

@@ -1,5 +1,6 @@
 import frappe
 from frappe.model.document import Document
+from frappe.utils import nowdate
 
 def update_adobe_database_records():
     adobe_records = frappe.get_all('Adobe', fields=['name', 'reference_no', 'customer_name', 'creation_date', 'customer_type', 
@@ -12,7 +13,7 @@ def update_adobe_database_records():
                                                     'qde_status', 'company_code', 'dsa_code', 'inprocess_classification', 
                                                     'classification', 'decline_type', 'bkyc_status', 'bkyc_status_reason', 
                                                     'login_month', 'decision_month', 'duplicate_finder', 'file_type', 
-                                                    'adobe_decision_date', 'final_decision_date', 'decision_date'])
+                                                    'final_decision_date', 'decision_date'])
 
     for adobe in adobe_records:
         reference_no = adobe['reference_no']
@@ -40,7 +41,7 @@ def update_adobe_database_records():
                           'ipa_status', 'city', 'state', 'pin_code', 'surrogate_eligibility', 'final_decision', 
                           'etb_nb_succ_flag', 'curable_flag', 'channel', 'lc2_code', 'lg_code', 'restart_flag', 
                           'company_code', 'dsa_code', 'inprocess_classification', 'classification', 'decline_type', 
-                          'login_month', 'decision_month', 'duplicate_finder', 'file_type', 'adobe_decision_date', 
+                          'login_month', 'decision_month', 'duplicate_finder', 'file_type', 
                           'final_decision_date']:
 
                 value = adobe.get(field)
@@ -81,6 +82,9 @@ def update_adobe_database_records():
                 if existing_record:
                     frappe.db.set_value('Adobe Database', existing_record, 'change_log', "".join(change_log))
                     frappe.db.set_value('Adobe Database', existing_record, update_data)
+                    # Set the change flag and change flag date
+                    frappe.db.set_value('Adobe Database', existing_record, 'change_flag', 'Yes')
+                    frappe.db.set_value('Adobe Database', existing_record, 'change_flag_date', nowdate())
                 else:
                     # For new records: Save only if change_occurred (will save only if values are populated/changed)
                     if update_data:
@@ -90,7 +94,7 @@ def update_adobe_database_records():
                             "doctype": "Adobe Database",
                             **new_data
                         })
-
+                        
                         doc.insert()
 
         except Exception as e:

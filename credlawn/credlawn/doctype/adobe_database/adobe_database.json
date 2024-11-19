@@ -8,6 +8,8 @@
  "field_order": [
   "section_break_lxxs",
   "change_log",
+  "column_break_vcoy",
+  "change_flag_date",
   "customer_details_section",
   "creation_date",
   "final_decision_date",
@@ -74,6 +76,7 @@
   "file_type",
   "column_break_sfxt",
   "sm_code",
+  "change_flag",
   "column_break_uucc",
   "company_code",
   "reference_no"
@@ -423,12 +426,30 @@
    "fieldtype": "Small Text",
    "label": "Change Log",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vcoy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "change_flag",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Change Flag",
+   "read_only": 1
+  },
+  {
+   "fieldname": "change_flag_date",
+   "fieldtype": "Date",
+   "label": "Change Flag Date",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 13:39:54.807271",
+ "modified": "2024-11-19 15:08:02.636152",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Adobe Database",

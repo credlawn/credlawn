@@ -124,10 +124,9 @@
   },
   {
    "fieldname": "data_source",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Data Source",
-   "options": "\nBOB\nPNB\nNaukri\nL&T\nMetlife\nJana\nInnov\nVendor"
+   "label": "Data Source"
   },
   {
    "fieldname": "link",
@@ -293,7 +292,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 14:37:54.159994",
+ "modified": "2024-11-19 15:52:30.096705",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

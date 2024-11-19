@@ -112,10 +112,11 @@
   },
   {
    "fieldname": "mobile_no",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Mobile No"
+   "label": "Mobile No",
+   "options": "Database"
   },
   {
    "fieldname": "city",
@@ -292,7 +293,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 15:52:30.096705",
+ "modified": "2024-11-19 16:47:36.840334",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "Blasting",

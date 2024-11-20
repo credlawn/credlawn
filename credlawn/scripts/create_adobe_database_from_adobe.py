@@ -96,6 +96,7 @@ def update_adobe_database_records():
                         })
                         
                         doc.insert()
+                frappe.db.delete('Adobe', adobe['name'])
 
         except Exception as e:
             frappe.log_error(message=str(e), title=f"Error syncing record {reference_no}")

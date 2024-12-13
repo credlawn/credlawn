@@ -10,6 +10,7 @@
   "customer_name",
   "pin_code",
   "sales_actionable",
+  "data_code",
   "column_break_vnnq",
   "no_updated",
   "promo_code",
@@ -49,7 +50,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "SVKYC Link"
+   "label": "SVKYC Link",
+   "unique": 1
   },
   {
    "fieldname": "reference_no",
@@ -122,12 +124,18 @@
    "fieldname": "sales_actionable",
    "fieldtype": "Data",
    "label": "Sales Actionable"
+  },
+  {
+   "fieldname": "data_code",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Data Code"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-20 17:08:08.494307",
+ "modified": "2024-12-11 23:46:43.807281",
  "modified_by": "Administrator",
  "module": "Credlawn",
  "name": "SVKYC Link",
